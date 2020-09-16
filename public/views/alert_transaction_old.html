@@ -1,0 +1,172 @@
+<center>
+  <h3> Alert Transaction  Master</h3>
+</center>
+<div class="col-md-12">
+  <div class="panel">
+    
+  <div class="panel-heading">
+
+  <span class="panel-icon"></span>
+  <span class="panel-title"> Alert Transaction  Master</span>
+  <button type="button" class="btn btn-primary btn-sm pull-right open" data-toggle="modal" data-target="#rake_model"
+   style="margin-top: 5px;" onclick="nulldata();">ADD Alert Transaction 
+  Data</button>
+   </div>
+  <div class="panel-body">
+    
+      <table class="table table-stripped table-condensed table-sm" id="alerttransaction_data" style="width:100%">
+        <thead>
+          <tr role="row">
+            <th>Alert Description</th>
+            
+            <th> Asset Name</th>
+             
+            <th>Tag ID</th>
+           
+            <th >Date</th>
+            <th> Email</th>
+              
+            <th >Alert id</th>
+            <th> Note user</th>
+             
+            <th>Action</th>
+
+          </tr>
+        </thead>
+      </table>
+  </div>
+  </div>
+  </div>
+
+
+
+
+
+<div class="modal" id="rake_model">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <button type="button" class="close" id="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" style="text-align: center">Form</h4>
+
+      </div>
+
+      <br>
+      <div class="modal-body" style="margin-top: -30px;">
+
+        <form method="post" onsubmit="return false;" id="form-alert_transaction">
+
+
+          <div class="row">
+
+            <div class="col-md-6">
+              <!-- <input type="hidden" id="n_rack_id"> -->
+              <label for="Rake Name">Alert Message Description:</label>
+              <input type="hidden" id="n_alert_trans_id" class="form-control" placeholder="Type Here...">
+              <!-- <input type="text" id="s_alert_desc" name="s_alert_desc" class="form-control" placeholder="Type Here..."> -->
+              <textarea class="form-control textarea-grow" id="s_alert_desc" name="s_alert_desc" rows="4"
+                placeholder="Enter Alert Description" data-validation="required" required></textarea>
+
+            </div>
+
+
+
+            <div class="col-md-6">
+              <label for="DataCenter">Select Asset:</label>
+              <select class="form-control" id="n_asset_id" name="n_asset_id" required>
+                <!-- <option value="1">Text</option>
+                      <option value="1">Currency</option>
+                      <option value="4">Select</option>
+                      <option value="5">Date</option>
+                      <option value="6">Email</option>
+                      <option value="7">File</option> -->
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+
+            <div class="col-md-6">
+
+              <label for="Asset Code">Select Alert :</label>
+              <select class="form-control" id="n_alert_id" name="n_alert_id" required>
+                <!-- <option value="1">Text</option>
+                      <option value="1">Currency</option>
+                      <option value="4">Select</option>
+                      <option value="5">Date</option>
+                      <option value="6">Email</option>
+                      <option value="7">File</option> -->
+              </select>
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label for="status">Select Tag ID:</label>
+              <select class="form-control" id="n_u_id" name="n_u_id" required>
+                <!-- <option value="1">Text</option>
+                      <option value="1">Currency</option>
+                      <option value="4">Select</option>
+                      <option value="5">Date</option>
+                      <option value="6">Email</option>
+                      <option value="7">File</option> -->
+              </select>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-6">
+              <label for="floor">Date :</label>
+              <input type="date" id="d_date" name="d_date" class="form-control" placeholder="Type Here..." required>
+
+            </div>
+
+
+
+            <div class="col-md-6">
+              <label for="room">Email:</label>
+              <input type="email" id="n_email" name="n_email" class="form-control" placeholder="Type Here..." data-validation="required" required>
+
+            </div>
+          </div>
+          <div class="row">
+
+            <div class="col-md-6">
+
+              <label for="Rake Model">Notify User:</label>
+              <input type="text" id="s_notify_user" class="form-control" placeholder="Type Here..." data-validation="required" required>
+
+            </div>
+          </div>
+          <br>
+
+
+          <input type="hidden" id="n_rake_id" class="form-control" name="n_rake_id">
+
+
+
+          <button type="button" id="save_alert_transaction" class="btn active btn-info btn-sm">Save</button>
+          <button type="button" id="update_alert_transaction" class="btn active btn-info btn-sm">Update</button>
+          <button type="reset" id="reset" class="btn active btn-warning btn-sm">Reset</button>
+
+        </form>
+
+
+      </div>
+
+      <!-- Modal footer -->
+
+
+    </div>
+  </div>
+</div>
+<script>
+  $.validate({
+    modules: 'html5'
+  });
+</script>
+<!-- <script src="../assets/javascript/rake.js"></script> -->
+<script src="./assets/javascript/alert_transaction.js"></script>

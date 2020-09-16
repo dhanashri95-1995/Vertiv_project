@@ -1,0 +1,408 @@
+[2020-09-12T18:57:35.053] [ERROR] app - {
+  status: 500,
+  mess: 'Record not Found !',
+  mess_body: 'Somthing went Wrong.',
+  data: error: column "s_user_name" does not exist
+      at Parser.parseErrorMessage (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:241:15)
+      at Parser.handlePacket (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:89:29)
+      at Parser.parse (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:41:38)
+      at Socket.<anonymous> (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\index.js:8:42)
+      at Socket.emit (events.js:223:5)
+      at addChunk (_stream_readable.js:309:12)
+      at readableAddChunk (_stream_readable.js:290:11)
+      at Socket.Readable.push (_stream_readable.js:224:10)
+      at TCP.onStreamRead (internal/stream_base_commons.js:181:23) {
+    length: 111,
+    name: 'error',
+    severity: 'ERROR',
+    code: '42703',
+    detail: undefined,
+    hint: undefined,
+    position: '53',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_relation.c',
+    line: '3194',
+    routine: 'errorMissingColumn'
+  }
+}
+[2020-09-12T19:02:33.485] [ERROR] app - {
+  status: 500,
+  mess: 'Record not Found !',
+  mess_body: 'Somthing went Wrong.',
+  data: error: column "s_user_name" does not exist
+      at Parser.parseErrorMessage (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:241:15)
+      at Parser.handlePacket (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:89:29)
+      at Parser.parse (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:41:38)
+      at Socket.<anonymous> (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\index.js:8:42)
+      at Socket.emit (events.js:223:5)
+      at addChunk (_stream_readable.js:309:12)
+      at readableAddChunk (_stream_readable.js:290:11)
+      at Socket.Readable.push (_stream_readable.js:224:10)
+      at TCP.onStreamRead (internal/stream_base_commons.js:181:23) {
+    length: 111,
+    name: 'error',
+    severity: 'ERROR',
+    code: '42703',
+    detail: undefined,
+    hint: undefined,
+    position: '53',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_relation.c',
+    line: '3194',
+    routine: 'errorMissingColumn'
+  }
+}
+[2020-09-12T19:36:55.227] [ERROR] app - {
+  status: 500,
+  mess: 'Record not Found !',
+  mess_body: 'Somthing went Wrong.',
+  data: error: syntax error at end of input
+      at Parser.parseErrorMessage (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:241:15)
+      at Parser.handlePacket (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:89:29)
+      at Parser.parse (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:41:38)
+      at Socket.<anonymous> (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\index.js:8:42)
+      at Socket.emit (events.js:223:5)
+      at addChunk (_stream_readable.js:309:12)
+      at readableAddChunk (_stream_readable.js:290:11)
+      at Socket.Readable.push (_stream_readable.js:224:10)
+      at TCP.onStreamRead (internal/stream_base_commons.js:181:23) {
+    length: 92,
+    name: 'error',
+    severity: 'ERROR',
+    code: '42601',
+    detail: undefined,
+    hint: undefined,
+    position: '141',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'scan.l',
+    line: '1120',
+    routine: 'scanner_yyerror'
+  }
+}
+[2020-09-12T19:45:10.868] [ERROR] app - {
+  status: 500,
+  mess: 'Record not Found !',
+  mess_body: 'Somthing went Wrong.',
+  data: error: syntax error at end of input
+      at Parser.parseErrorMessage (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:241:15)
+      at Parser.handlePacket (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:89:29)
+      at Parser.parse (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:41:38)
+      at Socket.<anonymous> (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\index.js:8:42)
+      at Socket.emit (events.js:223:5)
+      at addChunk (_stream_readable.js:309:12)
+      at readableAddChunk (_stream_readable.js:290:11)
+      at Socket.Readable.push (_stream_readable.js:224:10)
+      at TCP.onStreamRead (internal/stream_base_commons.js:181:23) {
+    length: 92,
+    name: 'error',
+    severity: 'ERROR',
+    code: '42601',
+    detail: undefined,
+    hint: undefined,
+    position: '141',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'scan.l',
+    line: '1120',
+    routine: 'scanner_yyerror'
+  }
+}
+[2020-09-12T19:45:25.277] [ERROR] app - {
+  status: 500,
+  mess: 'Record not Found !',
+  mess_body: 'Somthing went Wrong.',
+  data: error: syntax error at end of input
+      at Parser.parseErrorMessage (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:241:15)
+      at Parser.handlePacket (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:89:29)
+      at Parser.parse (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:41:38)
+      at Socket.<anonymous> (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\index.js:8:42)
+      at Socket.emit (events.js:223:5)
+      at addChunk (_stream_readable.js:309:12)
+      at readableAddChunk (_stream_readable.js:290:11)
+      at Socket.Readable.push (_stream_readable.js:224:10)
+      at TCP.onStreamRead (internal/stream_base_commons.js:181:23) {
+    length: 92,
+    name: 'error',
+    severity: 'ERROR',
+    code: '42601',
+    detail: undefined,
+    hint: undefined,
+    position: '141',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'scan.l',
+    line: '1120',
+    routine: 'scanner_yyerror'
+  }
+}
+[2020-09-12T19:47:16.379] [ERROR] app - {
+  status: 500,
+  mess: 'Record not Found !',
+  mess_body: 'Server Side Error.',
+  data: error: invalid input syntax for integer: ""
+      at Parser.parseErrorMessage (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:241:15)
+      at Parser.handlePacket (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:89:29)
+      at Parser.parse (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:41:38)
+      at Socket.<anonymous> (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\index.js:8:42)
+      at Socket.emit (events.js:223:5)
+      at addChunk (_stream_readable.js:309:12)
+      at readableAddChunk (_stream_readable.js:290:11)
+      at Socket.Readable.push (_stream_readable.js:224:10)
+      at TCP.onStreamRead (internal/stream_base_commons.js:181:23) {
+    length: 89,
+    name: 'error',
+    severity: 'ERROR',
+    code: '22P02',
+    detail: undefined,
+    hint: undefined,
+    position: undefined,
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'numutils.c',
+    line: '52',
+    routine: 'pg_atoi'
+  }
+}
+[2020-09-12T19:47:27.218] [ERROR] app - {
+  status: 500,
+  mess: 'Record not Found !',
+  mess_body: 'Server Side Error.',
+  data: error: invalid input syntax for integer: ""
+      at Parser.parseErrorMessage (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:241:15)
+      at Parser.handlePacket (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:89:29)
+      at Parser.parse (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:41:38)
+      at Socket.<anonymous> (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\index.js:8:42)
+      at Socket.emit (events.js:223:5)
+      at addChunk (_stream_readable.js:309:12)
+      at readableAddChunk (_stream_readable.js:290:11)
+      at Socket.Readable.push (_stream_readable.js:224:10)
+      at TCP.onStreamRead (internal/stream_base_commons.js:181:23) {
+    length: 89,
+    name: 'error',
+    severity: 'ERROR',
+    code: '22P02',
+    detail: undefined,
+    hint: undefined,
+    position: undefined,
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'numutils.c',
+    line: '52',
+    routine: 'pg_atoi'
+  }
+}
+[2020-09-12T19:48:07.627] [ERROR] app - {
+  status: 500,
+  mess: 'Record not Found !',
+  mess_body: 'Server Side Error.',
+  data: error: syntax error at or near "and"
+      at Parser.parseErrorMessage (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:241:15)
+      at Parser.handlePacket (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:89:29)
+      at Parser.parse (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:41:38)
+      at Socket.<anonymous> (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\index.js:8:42)
+      at Socket.emit (events.js:223:5)
+      at addChunk (_stream_readable.js:309:12)
+      at readableAddChunk (_stream_readable.js:290:11)
+      at Socket.Readable.push (_stream_readable.js:224:10)
+      at TCP.onStreamRead (internal/stream_base_commons.js:181:23) {
+    length: 92,
+    name: 'error',
+    severity: 'ERROR',
+    code: '42601',
+    detail: undefined,
+    hint: undefined,
+    position: '52',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'scan.l',
+    line: '1128',
+    routine: 'scanner_yyerror'
+  }
+}
+[2020-09-12T19:48:15.319] [ERROR] app - {
+  status: 500,
+  mess: 'Record not Found !',
+  mess_body: 'Somthing went Wrong.',
+  data: error: syntax error at end of input
+      at Parser.parseErrorMessage (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:241:15)
+      at Parser.handlePacket (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:89:29)
+      at Parser.parse (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:41:38)
+      at Socket.<anonymous> (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\index.js:8:42)
+      at Socket.emit (events.js:223:5)
+      at addChunk (_stream_readable.js:309:12)
+      at readableAddChunk (_stream_readable.js:290:11)
+      at Socket.Readable.push (_stream_readable.js:224:10)
+      at TCP.onStreamRead (internal/stream_base_commons.js:181:23) {
+    length: 92,
+    name: 'error',
+    severity: 'ERROR',
+    code: '42601',
+    detail: undefined,
+    hint: undefined,
+    position: '141',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'scan.l',
+    line: '1120',
+    routine: 'scanner_yyerror'
+  }
+}
+[2020-09-12T19:51:34.129] [ERROR] app - {
+  status: 500,
+  mess: 'Record not Found !',
+  mess_body: 'Somthing went Wrong.',
+  data: error: syntax error at end of input
+      at Parser.parseErrorMessage (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:241:15)
+      at Parser.handlePacket (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:89:29)
+      at Parser.parse (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:41:38)
+      at Socket.<anonymous> (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\index.js:8:42)
+      at Socket.emit (events.js:223:5)
+      at addChunk (_stream_readable.js:309:12)
+      at readableAddChunk (_stream_readable.js:290:11)
+      at Socket.Readable.push (_stream_readable.js:224:10)
+      at TCP.onStreamRead (internal/stream_base_commons.js:181:23) {
+    length: 92,
+    name: 'error',
+    severity: 'ERROR',
+    code: '42601',
+    detail: undefined,
+    hint: undefined,
+    position: '141',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'scan.l',
+    line: '1120',
+    routine: 'scanner_yyerror'
+  }
+}
+[2020-09-12T19:55:13.472] [ERROR] app - {
+  status: 500,
+  mess: 'Record not Found !',
+  mess_body: 'Server Side Error.',
+  data: error: syntax error at or near "and"
+      at Parser.parseErrorMessage (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:241:15)
+      at Parser.handlePacket (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:89:29)
+      at Parser.parse (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:41:38)
+      at Socket.<anonymous> (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\index.js:8:42)
+      at Socket.emit (events.js:223:5)
+      at addChunk (_stream_readable.js:309:12)
+      at readableAddChunk (_stream_readable.js:290:11)
+      at Socket.Readable.push (_stream_readable.js:224:10)
+      at TCP.onStreamRead (internal/stream_base_commons.js:181:23) {
+    length: 92,
+    name: 'error',
+    severity: 'ERROR',
+    code: '42601',
+    detail: undefined,
+    hint: undefined,
+    position: '52',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'scan.l',
+    line: '1128',
+    routine: 'scanner_yyerror'
+  }
+}
+[2020-09-12T19:55:21.839] [ERROR] app - {
+  status: 500,
+  mess: 'Record not Found !',
+  mess_body: 'Somthing went Wrong.',
+  data: error: syntax error at end of input
+      at Parser.parseErrorMessage (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:241:15)
+      at Parser.handlePacket (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:89:29)
+      at Parser.parse (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:41:38)
+      at Socket.<anonymous> (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\index.js:8:42)
+      at Socket.emit (events.js:223:5)
+      at addChunk (_stream_readable.js:309:12)
+      at readableAddChunk (_stream_readable.js:290:11)
+      at Socket.Readable.push (_stream_readable.js:224:10)
+      at TCP.onStreamRead (internal/stream_base_commons.js:181:23) {
+    length: 92,
+    name: 'error',
+    severity: 'ERROR',
+    code: '42601',
+    detail: undefined,
+    hint: undefined,
+    position: '141',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'scan.l',
+    line: '1120',
+    routine: 'scanner_yyerror'
+  }
+}

@@ -1,0 +1,415 @@
+<center>
+	<h3>User Master
+</center>
+
+<div class="col-md-12" id="userlisttbl">
+	<div class="panel">
+
+		<div class="panel-heading">
+			<span class="panel-icon"></span>
+			<span class="panel-title">User List</span>
+
+			<!-- <button data-toggle="modal" data-target="#user_model" type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#user_model"onclick="refresh();" style="margin-top: 5px;">ADD User DATA</button> -->
+			<button type="button" class="btn active btn-info btn-sm pull-right " onclick="divopennclose();"
+				style="margin-top: 5px;margin-left:8px" title="Add New Record"><span class="glyphicon glyphicon-plus">
+				</span></button><button class="btn active btn-info btn-sm pull-right" style="margin-top: 5px;" onclick="get_user_Datadelete('1');hideonecell();" title="Show Deleted Users"><i class="ps-icon fa fa-recycle"></i></button><button class="btn active btn-info btn-sm pull-right" style="margin-top: 5px;margin-right:6px" onclick="get_user_Data()"><i class="ps-icon fa fa-refresh"></i></button>
+				
+		</div>
+		<div class="panel-body" id="alldataofuser">
+			<table class="table table-striped table-bordered datatab" id="makerTable12">
+				<thead class="thead-light" id="alldata">
+					<tr>
+						<!-- <img src="../assets/img/vertiv/company.png"> -->
+						<th id="actionofdel">Action</th>
+						<!-- <th>User Name</th> -->
+						<th>Contact Details</th>
+						<th>Company Details</th>
+						<!-- <th>User DOB</th> -->
+						<th> Status</th>
+						<th width="68">Map User-Role</th>
+						
+					</tr>
+				</thead>
+			
+			</table>
+			
+			
+		</div>
+		<div class="panel-body" id="deletedataofuser">
+		<table class="table table-striped table-bordered datatab" id="delettab">
+			<thead class="thead-light">
+				<tr>
+					<!-- <th id="actionofdel">User Name</th> -->
+					
+					<th>Contact Details</th>
+					<th>Company Details</th>
+					<th>Status</th>
+					<!-- <th>User DOB</th> -->
+					
+					
+				</tr>
+			</thead>
+		
+		</table>
+		</div>
+	</div>
+</div>
+
+<section id="content_form" class="table-layout">
+
+	<div class="tray tray-center" style="height: 610px;">
+
+		<!-- <div class="content-header">
+  <h2> AdminForms makes <b class="text-primary">Validation</b> is easier than ever</h2>
+  <p class="lead">Use the Admin Forms you know and love to help build the perfect form.</p>
+  </div> -->
+
+		<div class="admin-form theme-primary mw1000 center-block" style="padding-bottom: 175px;">
+			<div class="panel heading-border panel-primary">
+				<form id="form-user" method="post" onsubmit="return false;">
+					<div class="panel-body bg-light">
+						<div class="section-divider mt20 mb40">
+							<span> User Form </span>
+						</div>
+
+						<div class="section row" id="spy1">
+							<div class="col-md-6">
+
+								<label for="firstname" class="field prepend-icon">
+									<!-- <input type="text" name="firstname" id="firstname" class="gui-input" placeholder="First name..."> -->
+									<label>First Name</label>
+									<label for="firstname" class="field prepend-icon">
+										<input type="text" class="form-control input-sm" id="s_first_name"
+											placeholder="First Name" name="s_first_name" data-validation="required"
+											data-validation="length alphanumeric" data-validation-length="3-12">
+										<label for="firstname" class="field-icon" style="margin-top: -7px;">
+											<i class="fa fa-user"></i>
+										</label>
+									</label>
+							</div>
+
+							<div class="col-md-6">
+								<label>Last Name</label>
+								<label for="lastname" class="field prepend-icon">
+									<input type="text"  class="form-control input-sm" name="s_last_name" id="s_last_name" class="gui-input"
+										placeholder="Last name" data-validation="required">
+									<label for="lastname" class="field-icon" style="margin-top: -7px;">
+										<i class="fa fa-user"></i>
+									</label>
+								</label>
+							</div>
+							<!-- <div class="col-md-6">
+    <label for="lastname" class="field prepend-icon">
+    <input type="text" name="s_user_name" id="s_user_name" class="gui-input" placeholder="Last name"  data-validation="required">
+    <label for="lastname" class="field-icon">
+    <i class="fa fa-user"></i>
+    </label>
+    </label>
+    </div> -->
+						</div>
+						<div class="section row" id="spy1">
+							<!-- <div class="col-md-6"> -->
+								<!-- <label>User Name</label>
+								<label for="lastname" class="field prepend-icon">
+									<input type="text" name="s_user_name" id="s_user_name" class="gui-input"
+										placeholder="User name" data-validation="required">
+									<label for="lastname" class="field-icon">
+										<i class="fa fa-user"></i>
+									</label>
+								</label> -->
+							<!-- </div> -->
+
+							<div class="col-md-6">
+								<label>Email Id</label>
+								<label for="useremail" class="field prepend-icon">
+									<input type="text"  class="form-control input-sm"  id="s_email" name="s_email"
+										placeholder="User Email ID" data-validation="required,email"
+										onblur="getcheckemail();">
+
+								
+									<label for="useremail" class="field-icon" style="margin-top: -7px;">
+										<i class="fa fa-envelope"></i>
+									</label>
+								</label>
+							</div>
+							<div class="col-md-6">
+							
+								<label>Company Name</label>
+								<label for="rolename"> </label>
+								<label for="website" class="field prepend-icon">
+									<input type="text"  class="form-control input-sm"  id="s_company_name" placeholder="Company Name"
+										name="s_company_name" data-validation="required">
+
+								
+									<label for="website" class="field-icon" style="margin-top: -7px;">
+										<i class="fa fa-globe"></i>
+									</label>
+								</label>
+							</div>
+
+						</div>
+						<div class="section row" id="spy1">
+							
+							<div class="col-md-6">
+								<label>Department</label>
+								<!-- <label for="rolename"> </label> -->
+								<label for="website" class="field prepend-icon">
+									<input type="text"  class="form-control input-sm"  id="s_department" placeholder="Department Name"
+										name="s_department" data-validation="required">
+
+								
+									<label for="website" class="field-icon" style="margin-top: -7px;">
+										<i class="fa fa-globe"></i>
+									</label>
+								</label>
+								<!--  -->
+							</div>
+							<div class="col-md-6">
+								<label>Designation</label>
+								<label for="rolename"> </label>
+								<label for="website" class="field prepend-icon">
+									<input type="text"  class="form-control input-sm"  id="s_designation" placeholder="Designation"
+										name="s_designation" data-validation="required">
+									<!-- <input type="url" name="website" id="website" class="gui-input" placeholder="Current website url"> -->
+									<label for="website" class="field-icon" style="margin-top: -7px;">
+										<i class="fa fa-globe"></i>
+									</label>
+								</label>
+							</div>
+						</div>
+
+						<div class="section row" id="spy1">
+						
+							<div class="col-md-6">
+								<label>Joining Date</label>
+								<input type="date"  class="form-control input-sm"  id="d_join_date" placeholder="Enter User Name"
+									name="d_join_date" required>
+								
+							
+							</div>
+							<div class="col-md-6">
+								<!-- <div class="form-group col-md-6 col-sm-12"> -->
+									<label for="pwd">Contact Number:</label>
+									<input type="Number" class="form-control input-sm" id="n_con_number"
+										placeholder="Enter User Contact Number" name="n_con_number" required>
+										<label for="website" class="field-icon" style="margin-top: -7px;">
+										
+								<!-- </div> -->
+							</div>
+						</div>
+						<div class="section row" id="spy1">
+						
+							<div class="col-md-6">
+								<label>Address</label>
+								<span id="max-length-element">200</span> chars left
+								<label for="comment" class="field prepend-icon">
+									<textarea class="gui-textarea" id="s_address" name="s_address"
+										placeholder="Your Address" data-validation="required"></textarea>
+									<label for="comment" class="field-icon">
+										<i class="fa fa-comments"></i>
+									</label>
+									<!-- <span class="input-footer"> -->
+									<!-- <strong>A Footer!:</strong> Use this area to put a useful tip or guideline.. -->
+									</span>
+								</label>
+							</div>
+							<div class="col-md-6">
+								<label>About You</label>
+								<span id="max-length-element">200</span> chars left
+								<label for="comment" class="field prepend-icon">
+									<textarea class="gui-textarea" id="s_about_me" name="s_about_me"
+										placeholder="About Me" data-validation="required"></textarea>
+									<label for="comment" class="field-icon">
+										<i class="fa fa-comments"></i>
+									</label>
+									
+									</span>
+								</label>
+							</div>
+						</div>
+
+						<div class="section row" id="spy1">
+						
+							
+							<div class="col-md-6">
+								<label>Select Active</label>
+								
+								<label for="comment" class="field prepend-icon">
+									<select class="form-control input-sm" id="n_active" name="n_active" required>
+										<option label="Select Status of User"></option>
+										<option value="1">Active</option>
+										<option value="0">Inactive</option>
+									</select>
+
+									</span>
+								</label>
+							</div>
+						</div>
+
+						<!-- <div class="section row" id="spy1">
+  <div class="col-md-6">
+  <label for="mobile_phone" class="field prepend-icon">
+  <input type="tel" name="mobile_phone" id="mobile_phone" class="gui-input phone-group" placeholder="company">
+  <label for="mobile_phone" class="field-icon">
+  <i class="fa fa-mobile-phone"></i>
+  </label>
+  </label>
+  </div>
+  
+  <div class="col-md-6">
+  <label for="home_phone" class="field prepend-icon">
+  <input type="tel" name="home_phone" id="home_phone" class="gui-input phone-group" placeholder="Department">
+  <label for="home_phone" class="field-icon">
+  <i class="fa fa-phone"></i>
+  </label>
+  </label>
+  </div>
+  
+  </div> -->
+
+						<!-- <div class="section row" id="spy1">
+							<div class="col-md-6">
+								<label>Password</label>
+								<label for="password" class="field prepend-icon">
+									<input type="password" name="s_pass" id="s_pass" class="gui-input"
+										placeholder="Create a password" data-validation="required">
+									<label for="password" class="field-icon">
+										<i class="fa fa-lock"></i>
+									</label>
+								</label>
+							</div>
+
+							<div class="col-md-6">
+								<label>Repeat Password</label>
+								<label for="repeatPassword" class="field prepend-icon">
+									<input type="password" name="repeatPassword" id="repeatPassword" class="gui-input"
+										pla
+										ceholder="Repeat password" data-validation="required">
+									<label for="repeatPassword" class="field-icon">
+										<i class="fa fa-unlock-alt"></i>
+									</label>
+								</label>
+							</div>
+						</div> -->
+
+						<div class="row">
+							<div class="col-md-6 col-sm-6 ">
+								<button type="button" class="btn active btn-info btn-sm" id="saveuser">Save</button>
+								<button type="button" class="btn active btn-info btn-sm" id="updateuser"
+									style="display: none;">Update</button>
+								<button type="reset" id="resetuser" class="btn active btn-warning btn-sm"
+									onclick="divopennclose_()">Back</button>
+							</div>
+						</div>
+
+					</div>
+
+				</form>
+			</div>
+		</div>
+
+	</div>
+
+</section>
+
+<div class="modal" id="user_model">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+
+			<!-- Modal Header -->
+			<div class="modal-header">
+				<button type="button" class="close" id="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title" style="text-align: center"> User Form</h4>
+
+			</div>
+			<br>
+
+			<div class="modal-body" style="margin-top: -30px;">
+
+				<form id="form-user" method="post" onsubmit="return false;">
+
+					<input type="hidden" id="n_user_seq" name="n_user_seq">
+
+					<input type="hidden" id="s_user_id" name="s_user_id">
+
+					<div class="row">
+						<!-- <div class="form-group col-md-6 col-sm-12">
+							<label for=" pwd"> User Name:</label>
+							<input type="text" class="form-control input-sm" id="s_user_name"
+								placeholder="Enter User Name" name="s_user_name" data-validation="required"
+								data-validation="length alphanumeric" data-validation-length="3-12">
+						</div> -->
+
+						<div class="form-group col-md-6 col-sm-12">
+							<label for="pwd"> Email ID:</label>
+							<input type="text" class="form-control input-sm" id="s_email" name="s_email"
+								placeholder="Enter User Email ID" data-validation="required,email"
+								onblur="getcheckemail();">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-6 col-sm-12">
+							<label for="pwd"> DOB:</label>
+							<input type="date" class="form-control input-sm" id="d_dob" placeholder="Enter User Name"
+								name="d_dob" required>
+						</div>
+
+						
+
+					</div>
+					<p class="lead s_about_me"></p>
+					<div class="row">
+						<div class="form-group col-md-6 col-sm-12">
+							<label for="pwd">Password:</label>
+							<input type="password" class="form-control input-sm" id="s_pass"
+								placeholder="Enter password" name="s_pass" data-validation="required">
+						</div>
+
+						<div class="form-group col-md-6 col-sm-12">
+							<tr>
+								<label>About Me</label>
+								<span id="max-length-element">200</span> chars left <br>
+								<textarea class="form-control textarea-grow" id="s_about_me" rows="4" spellcheck="true"
+									data-validation="required"></textarea>
+							</tr>
+							<!-- <p class="lead s_about_me"></p> -->
+							<!-- <label for="aboutuser">About You:</label> -->
+
+							<!-- <textarea class="form-control form-control-sm textarea-grow" id="s_about_me" name="s_about_me" rows="4" placeholder="Enter About User" data-validation="required"></textarea> -->
+
+							<!-- <span id="max-length-element">200</span> chars left <br> 
+                  <textarea class="form-control textarea-grow" id="s_about_me" rows="4" spellcheck="true"></textarea> -->
+
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6 col-sm-6 ">
+							<button type="button" class="btn active btn-info btn-sm" id="saveuser">Save</button>
+							<button type="button" class="btn active btn-info btn-sm" id="updateuser"
+								style="display: none;">Update</button>
+							<button type="reset" id="resetuser" class="btn active btn-warning btn-sm"
+								onclick="userback();">Cancel</button>
+						</div>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<script>
+	$.validate({
+		modules: 'html5,file'
+	});
+	$("#deletedataofuser").hide();
+	function hideonecell(){
+		$("#alldataofuser").hide();
+		$("#deletedataofuser").show();
+	}
+	$('#s_about_me').restrictLength($('#max-length-element'));
+	$('#s_address').restrictLength($('#max-length-element'));
+	$("#content_form").hide();
+</script>
+<script src="../../assets/javascript/user_master.js"></script>

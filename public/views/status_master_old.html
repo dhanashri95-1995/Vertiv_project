@@ -1,0 +1,135 @@
+<center><h3>Status Master</center>
+    <div class="col-md-6">
+        <div class="panel">
+        <div class="panel-heading">
+        <span class="panel-icon"></span>
+        <span class="panel-title"> Form</span>
+         </div>
+        <div class="panel-body">
+            <form id="form-status"  method="post"  onsubmit="return false;">
+                      
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="pwd">Status Name:</label>
+                        <input type="text" class="form-control" id="s_status_name" placeholder="Enter Status Name"
+                            name="s_status_name" >
+    
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="pwd">Status Description:</label>
+                        <input type="text" class="form-control" id="s_status_desc" placeholder="Status Description"
+                            name="s_status_desc" data-validation="required">
+                    </div>
+                </div>
+                <br>
+               
+                <div class="row">
+                    <div class="col-md-6">
+    
+                        <input type="hidden" class="form-control" id="n_status_no" placeholder="Enter email"
+                            name="n_status_no" >
+    
+                    </div>
+                </div>
+    
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                    <!-- <button type="button" class="btn btn-primary">Submit</button> -->
+                    <button type="submit" class="btn active btn-info btn-sm" id="savestatus">Save</button>
+                    <button type="submit" class="btn active btn-info btn-sm" id="updatestatus" style="display: none;">Update</button>
+                    <button type="reset"  id="resetstatus" class="btn active btn-warning btn-sm">Reset</button>
+                    <!-- <button type="button" class="btn active btn-info btn-sm">Back</button> -->
+                </div>
+                </div>
+            </form>
+        </div>
+        </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel">
+            <div class="panel-heading">
+            <span class="panel-icon"></span>
+            <!-- <span class="panel-title"> Form</span> -->
+             </div>
+            <div class="panel-body">
+                <table class="table table-stripped table-condensed table-sm" id="statusmaster" style="width:100%">
+                    <thead class="thead-light">
+                        <tr>
+                            <!-- <th>Sr No</th> -->
+                            <th>Status Name</th>
+                            <th>Status Description</th>
+                            <!-- <th>Brand Story</th> -->
+                
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            </div>
+            </div>
+    
+    
+    
+    
+    
+    <div class="modal" id="myModalforrole">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+    
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" style="text-align: center">Form</h4>
+    
+                </div>
+    
+                <!-- Modal body -->
+                <!-- <div class="col-sm-12" id="formActivity"> -->
+                <div class="modal-body" style="margin-top: -30px;">
+                    <form id="form-status"  method="post"  onsubmit="return false;">
+                      
+    
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="pwd">Status Description:</label>
+                                <input type="text" class="form-control" id="s_status_desc" placeholder="Status Description"
+                                    name="s_status_desc" data-validation="required">
+                            </div>
+                            <div class="col-md-6">
+    
+                                <input type="hidden" class="form-control" id="n_status_no" placeholder="Enter email"
+                                    name="n_status_no" >
+    
+                            </div>
+                        </div>
+    
+                        <br>
+                        <div class="row">
+                            <div class="col-md-6">
+                            <!-- <button type="button" class="btn btn-primary">Submit</button> -->
+                            <button type="submit" class="btn active btn-info btn-sm" id="savestatus">Save</button>
+                            <button type="submit" class="btn active btn-info btn-sm" id="updatestatus" style="display: none;">Update</button>
+                            <button type="reset"  id="resetrole" class="btn active btn-warning btn-sm">Reset</button>
+                        </div>
+                        </div>
+                    </form>
+                </div>
+    
+                <!-- Modal footer -->
+    
+    
+    
+            </div>
+        </div>
+    </div>
+    <!-- <script>alert("l")</script> -->
+    <script>
+        $.validate({
+            modules: 'html5'
+        });
+    </script>
+    <script src="../../assets/javascript/status_master.js"></script>
+    <!-- <script src="/public/assets/javascript/user_master.js"></script> -->

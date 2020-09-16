@@ -1,0 +1,440 @@
+<center>
+  <h3>Asset Master
+</center>
+
+<div class="col-md-12" id="assetlist">
+  <div class="panel">
+
+    <div class="panel-heading">
+      <span class="panel-icon"></span>
+      <span class="panel-title"> Asset List</span>
+
+      <button type="button" class="btn active btn-info btn-sm pull-right" title="Add Asset" onclick="divopennclose();"
+        style="margin-top: 5px;margin-left:8px"><span class="glyphicon glyphicon-plus"> </span></button>
+      <button type="button" class="btn active btn-info btn-sm pull-right" onclick="get_Deleted_Asset_Data();"
+        style="margin-top: 5px;margin-left:8px" title="Deleted Data"><i class="ps-icon fa fa-recycle"></i>
+        </span></button>
+      <button type="button" class="btn active btn-info btn-sm pull-right" title="Refresh" onclick="get_Asset_Data();"
+        style="margin-top: 5px;margin-left:8px"><span class="glyphicon glyphicon-refresh"> </span></button>
+      <button type="button" class="btn active btn-info btn-sm pull-right " title="Import" data-toggle="modal"
+        data-target="#AssetModal" style="margin-top: 5px;margin-left:8px" onclick="getcreatedby();">
+        <i class="fa fa-upload"></i>Import Asset Data</i>
+        <!-- <button type="button" class="btn active btn-info btn-sm pull-right " style="margin-top: 5px;margin-left:8px"
+          onclick="download_csv()">
+              <i class=" fa fa-download"></i>Export Asset Data</i>
+        </button> -->
+        <button type="button" class="btn active btn-info btn-sm pull-right " style="margin-top: 5px;margin-left:8px"
+          data-toggle="modal" title="Export" data-target="#exportModal"> <i class=" fa fa-download"></i>Export Data</i>
+        </button>
+        <!-- data-toggle="modal" data-target="#exportModal" -->
+        <div id="exportModal" class="modal fade" role="dialog">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Upload Asset Data</h4>
+              </div>
+              <div class="modal-body">
+                <form id="Exportfile" name="Exportfile" enctype="multipart/form-data" action="/exportData" method="post"
+                  target="output_frame2" onsubmit="return true;">
+
+                  <div class="form-group">
+                    <label for="file" class="field prepend-icon"><b>Do You Want To Export Asset Data:</b></label><br>
+
+                    <button id="btnExport" type="submit" name="btnExport"
+                      class=" btn active btn-info btn-sm">yes</button>
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+
+
+                  </div>
+                </form>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="Exportclose">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div id="AssetModal" class="modal fade" role="dialog">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Import Asset Data</h4>
+              </div>
+              <div class="modal-body">
+                <form id="my-file" name="my-file" enctype="multipart/form-data" action="/uploadAsset" method="post"
+                  target="output_frame1" onsubmit="return true;">
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="col-md-2">
+
+                          <label for="Asset-file">Select CSV File:</label>
+                        </div>
+                        <div class="col-md-9">
+                          <input type="file" class="form-control" name="asset-file" id="asset-file"
+                            data-validation="mime size required" data-validation-allowing="vnd.ms-excel"
+                            data-validation-max-size="200kb" data-validation-error-msg-required="No file selected">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="col-md-2">
+
+
+                        </div>
+                        <div class="col-md-9">
+                          <button id="btnuploadfile" type="submit" name="btnuploadfile"
+                            class=" btn active btn-info btn-sm">Import</button>
+                          <button type="reset" id="resetmodal" class="btn active btn-warning btn-sm">Cancel</button>
+
+                          <a href="Asset.csv" class="btn btn-secondary btn-sm">Download Format</a>
+
+                          <!-- <button type="button" class="btn btn-secondary btn-sm"
+                          data-dismiss="modal">Close</button> -->
+                          <input type="hidden" class="form-control" name="s_created_by" id="s_created_by" value="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <!-- Please Read Below Notes Before Data Sheet Upload:
+                        <h4> <ul>
+                          <li>DATACENTER NAME must be from Datacenter Location Master.</li>
+                          <li>FLOOR must be from Datacenter Door Master.</li>
+                          <li>ROOM must be from Datacenter Room Master.</li>
+                          <li>RAKE must be from Datacenter Rake Master.</li>
+                          <li>RACKU must be from Datacenter Racku Master.</li>
+                          <li>SERIAL NO. must be unique value.It can be Alpha,Numbers and limited  special characters</li>
+                          <li>BARCODE NO. must be unique value.It can be Alpha,Numbers and limited  special characters</li>
+                          <li>NEXT MAINTANANCE & INSTALL DATE can be empty or must be valid Date(eg mm/dd/yyyy).</li>
+                          <li>OWNER NAME can be empty or must be add username from User Master. </li>
+                        
+                    
+                        </ul>
+                      </h4>
+                      
+                      Never Change First Row On Import CSV File. -->
+                      Please Read Below Notes Before Data Sheet Upload:
+                      <h4>
+                        <ul>
+                          <li>Serial No.<small>must be unique value.It can be Alpha,Numbers and limited special
+                              characters.</small></li>
+                          <li>Barcode No. <small>must be unique value.It can be Alpha,Numbers and limited special
+                              characters.</small></li>
+                          <li>Next Maintanance & Install Date<small> can be empty or must be valid Date(eg
+                              mm/dd/yyyy).</small></li>
+                          <li>Owner Name <small>can be empty or must be add username from User Master.</small> </li>
+                        </ul>
+                      </h4>
+                      Never Change First Row On Import CSV File.
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="modalclose">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </div>
+
+    <div class="panel-body" id="get_asset_panel">
+
+      <table class="table table-striped table-bordered datatab" id="asset_table">
+
+        <thead>
+
+          <tr role="row">
+            <th>Action</th>
+            <th>Asset Name</th>
+            <th>Asset No.</th>
+            <th>Manufacrturer</th>
+            <th>Model No.</th>
+            <th>Device Category</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="panel-body" id="deleted_asset_panel">
+
+      <table class="table table-striped table-bordered datatab" id="deleted_asset_table">
+
+        <thead>
+          <tr>
+            <th>Asset Name</th>
+            <th>Asset No.</th>
+            <th>Manufacrturer</th>
+            <th>Model No.</th>
+            <th>Device Category</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div id="notfoundtable"></div>
+<section id="assett_form" class="table-layout">
+
+  <div class="tray tray-center" style="height: 610px;">
+
+    <!-- <div class="content-header">
+        <h2> AdminForms makes <b class="text-primary">Validation</b> is easier than ever</h2>
+        <p class="lead">Use the Admin Forms you know and love to help build the perfect form.</p>
+        </div> -->
+
+    <div class="admin-form theme-primary mw1000 center-block" style="padding-bottom: 175px;">
+      <div class="panel heading-border panel-primary">
+        <form id="asset_form" method="post" onsubmit="return false;">
+          <div class="panel-body bg-light">
+            <button type="reset" class="close" onclick="divopennclose_()">Back</button>
+            <div class="section-divider mt20 mb40">
+              <span> Asset Master Form </span>
+            </div>
+            <div class="section row" id="spy1">
+              <div class="col-md-6">
+                <label for="Asset Name"><b>Asset Name:</b></label>
+                <input type="text" class="form-control input-sm" min="0" max="5" id="s_asset_name"
+                  placeholder="Asset Name" name="s_asset_name" required>
+              </div>
+              <div class="col-md-6">
+                <label for="Asset Number"><b>Asset Number:</b></label>
+                <input type="text" class="form-control input-sm" id="n_asset_no" placeholder="Asset Name"
+                  name="s_asset_no" required>
+              </div>
+            </div>
+            <div class="section row" id="spy1">
+
+              <div class="col-md-6">
+                <label for="Asset Manufacrturer Name"><b>Asset Manufacrturer Name:</b></label>
+
+                <input type="text" class="form-control input-sm" id="s_manufacturer_name"
+                  placeholder="Asset Manufacrturer Name" name="s_manufacturer_name" required>
+              </div>
+
+              <div class="col-md-6">
+                <label for="maker"><b>Maker:</b></label>
+
+                <input type="text" class="form-control input-sm" id="s_make" placeholder="Asset Maker" name="s_make"
+                  required>
+
+              </div>
+            </div>
+
+            <div class="section row" id="spy1">
+              <div class="col-md-6">
+                <label for="Asset Model"><b>Model No.:</b></label>
+
+                <input type="text" class="form-control input-sm" id="n_model_no" placeholder="Asset Model Number"
+                  name="n_model_no" required>
+
+              </div>
+              <div class="col-md-6">
+                <label for="Category"><b>Device Category:</b></label>
+
+                <input type="text" class="form-control input-sm" id="s_device_category" placeholder="Device Category"
+                  name="s_device_category" required>
+              </div>
+
+
+            </div>
+            <div class="section row" id="spy1">
+
+              <div class="col-md-6">
+                <label for="Serial Number"><b>Serial No.:</b></label>
+
+                <input type="text" class="form-control input-sm" id="n_serial_number" placeholder="Serial Number"
+                  name="n_serial_number" required>
+              </div>
+
+              <div class="col-md-6">
+                <label for="Barcode No"><b>Barcode No.:</b></label>
+
+                <input type="text" class="form-control input-sm" id="n_barcode_number" placeholder="Barcode No"
+                  name="n_barcode_number" required>
+
+              </div>
+            </div>
+            <div class="section row" id="spy1">
+
+              <div class="col-md-6">
+                <label for="Owner Name"><b>Owner Name:</b></label>
+
+                <input type="text" class="form-control input-sm" id="s_owner_name" placeholder="Owner Name"
+                  name="s_owner_name" required>
+              </div>
+
+              <div class="col-md-6">
+                <label for="Owner Email"><b>Owner Email:</b></label>
+
+                <input type="email" class="form-control input-sm" id="s_owner_email" placeholder="Asset Brand"
+                  name="s_owner_email" required>
+
+              </div>
+            </div>
+            <div class="section row" id="spy1">
+
+              <div class="col-md-6">
+                <label for="usize"><b>U size:</b></label>
+
+                <input type="text" class="form-control input-sm" id="n_u_size" placeholder="Asset U Size"
+                  name="n_u_size" required>
+              </div>
+
+              <div class="col-md-6">
+                <label for="U Position"><b>U Position:</b></label>
+
+                <input type="text" class="form-control input-sm" id="n_u_position" placeholder="Asset U Position"
+                  name="n_u_position" required>
+
+              </div>
+            </div>
+
+            <div class="section row" id="spy1">
+
+              <div class="col-md-6">
+                <label for="Install Date"><b>Install Date:</b></label>
+
+                <input type="date" class="form-control input-sm" id="d_install_date" placeholder="Install Date"
+                  name="d_install_date" required>
+
+              </div>
+              <div class="col-md-6">
+                <label for="U Height"><b>U Height:</b></label>
+
+                <input type="text" class="form-control input-sm" id="n_u_height" placeholder="U Height"
+                  name="n_u_height" required>
+              </div>
+            </div>
+
+            <div class="section row" id="spy1">
+              <div class="col-md-6">
+                <label for="Supplier"><b>Supplier:</b></label>
+
+                <input type="text" class="form-control input-sm" id="s_supplier" placeholder="Supplier"
+                  name="s_supplier" required>
+
+              </div>
+
+              <div class="col-md-6">
+                <label for="Rated Power"><b>Rated Power:</b></label>
+
+                <input type="number" class="form-control input-sm" id="s_rated_power" placeholder="Rated Power(KVA)"
+                  min="0" name="n_rated_power" required>
+              </div>
+
+            </div>
+            <div class="section row" id="spy1">
+
+              <div class="col-md-6">
+                <label for="Current(A)"><b>Rated Current:</b></label>
+
+                <input type="number" class="form-control input-sm" id="s_rated_current" placeholder="Current"
+                  name="s_rated_current" min="0" required>
+
+              </div>
+              <div class="col-md-6">
+                <label for="Rated Voltage"><b>Rated Voltage:</b></label>
+
+                <input type="number" class="form-control input-sm" id="n_rated_voltage" placeholder="Rated Voltage"
+                  min="0" name="n_rated_voltage" required>
+              </div>
+            </div>
+            <div class="section row" id="spy1">
+
+              <div class="col-md-6">
+                <label for="Maintenance cycle"><b>Maintenance cycle:</b></label>
+
+                <input type="text" class="form-control input-sm" id="s_maintenance_cycle"
+                  placeholder="Maintenance cycle" name="s_maintenance_cycle" required>
+
+              </div>
+              <div class="col-md-6">
+                <label for="Contact Person"><b>Contact Person:</b></label>
+
+                <input type="text" class="form-control input-sm" id="s_contact_person" placeholder="Contact Person"
+                  name="s_contact_person" required>
+              </div>
+            </div>
+
+            <div class="section row" id="spy1">
+
+              <div class="col-md-6">
+                <label for="Contact Number"><b>Contact Number:</b></label>
+
+                <input type="number" class="form-control input-sm" id="n_contact_number" placeholder="Contact Number"
+                  name="n_contact_number" required>
+
+              </div>
+              <div class="col-md-6">
+                <label for="Next Maintenance"><b>Next Maintenance:</b></label>
+
+                <input type="date" class="form-control input-sm" id="d_next_maintenance" placeholder="Next Maintenance"
+                  name="d_next_maintenance" required>
+
+              </div>
+            </div>
+
+            <div class="section row" id="spy1">
+
+              <div class="col-md-6">
+                <label for="Note:"><b>Customized Note:</b></label>
+
+
+                <span class="pull-right">chars left</span><span class="pull-right" id="max-length-element">300</span>
+                <br>
+                <textarea class="gui-input textarea-grow" id="s_customized_notes" rows="4" spellcheck="true"
+                  required></textarea>
+
+              </div>
+
+
+
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 col-sm-6 ">
+                <button type="button" id="saveAsset" class="btn active btn-info btn-sm">Save</button>
+                <button type="button" id="updateAsset" class="btn active btn-info btn-sm">Update</button>
+                <button type="reset" id="reset" class="btn active btn-warning btn-sm"
+                  onclick="divopennclose_()">Back</button>
+
+                <input type="hidden" id="n_asset_id" class="form-control" name="n_asset_id">
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+</section>
+
+
+
+<script>
+  $.validate({
+    modules: 'html5,file'
+
+  });
+  $('#s_customized_notes').restrictLength($('#max-length-element'));
+</script>
+<iframe src="" name="output_frame1" id="output_frame1" style="display:none;" onload="getCall_deactive()"></iframe>
+<iframe src="" name="output_frame2" id="output_frame2" style="display:none;" onload="getCall_deactive2()"></iframe>
+<script src="../assets/javascript/asset.js"></script>

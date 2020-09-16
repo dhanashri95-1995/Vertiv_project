@@ -1,0 +1,306 @@
+<center>
+  <h3>Asset Master
+</center>
+
+<div class="col-md-12" id="assetlist">
+  <div class="panel">
+
+    <div class="panel-heading">
+      <span class="panel-icon"></span>
+      <span class="panel-title"> Asset List</span>
+
+
+
+
+      <button type="button" class="btn active btn-info btn-sm pull-right " onclick="divopennclose();"
+        style="margin-top: 5px;margin-left:8px"><span class="glyphicon glyphicon-plus"> </span></button>
+    </div>
+    <div class="panel-body">
+
+      <table class="table table-striped table-bordered datatab" id="asset_table">
+        <thead>
+          <tr role="row">
+           <th>Asset ID</th>
+           <th>Asset Name</th>
+           <th>Brand</th>
+           <th>Module ID</th>
+           <th>Purchase Price</th>
+           <th>IP Address</th>
+            <th>Action</th>
+
+
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<section id="assett_form" class="table-layout">
+
+  <div class="tray tray-center" style="height: 610px;">
+
+    <!-- <div class="content-header">
+      <h2> AdminForms makes <b class="text-primary">Validation</b> is easier than ever</h2>
+      <p class="lead">Use the Admin Forms you know and love to help build the perfect form.</p>
+      </div> -->
+
+    <div class="admin-form theme-primary mw1000 center-block" style="padding-bottom: 175px;">
+      <div class="panel heading-border panel-primary">
+        <form id="asset_form" method="post" onsubmit="return false;">
+          <div class="panel-body bg-light">
+            <div class="section-divider mt20 mb40">
+              <span> Asset Master Form </span>
+            </div>
+
+            <div class="section row" id="spy1">
+              <div class="col-md-6">
+                <label for="Asset Description" ><b>Asset ID:</b></label>
+                <input type="text" class="gui-input" id="s_asset_uid" placeholder="Asset UID" name="s_asset_uid"
+                 required>
+              </div>
+
+              <div class="col-md-6">
+                <label for="Asset Name" ><b>Asset Name:</b></label>
+              
+                <input type="text" class="gui-input" id="s_asset_name" placeholder="Asset Name" name="s_asset_name"
+                  required>
+
+              </div>
+            </div>
+
+            <div class="section row" id="spy1">
+              <div class="col-md-6">
+                <label for="usize" ><b>U size:</b></label>
+             
+                <input type="text" class="gui-input" id="s_u_size" placeholder="Asset U Size" name="s_u_size"
+                  required>
+              </div>
+
+              <div class="col-md-6">
+                <label for="Asset Brand" ><b>Brand:</b></label>
+              
+                <input type="text" class="gui-input" id="s_asset_brand" placeholder="Asset Brand" name="s_asset_brand"
+                  required>
+
+              </div>
+            </div>
+            <div class="section row" id="spy1">
+              <div class="col-md-6">
+                <label for="Category"><b>Category:</b></label>
+             
+                <input type="text" class="gui-input" id="s_asset_cateogry" placeholder="Asset Category"
+                  name="s_asset_cateogry" required>
+              </div>
+
+              <div class="col-md-6">
+                <label for="Asset Model"><b>Model:</b></label>
+             
+                <input type="text" class="gui-input" id="s_asset_model" placeholder="Asset Model" name="s_asset_model"
+                  required>
+
+              </div>
+            </div>
+            <div class="section row" id="spy1">
+
+              <div class="col-md-6">
+                <label for="Module ID"><b>Module ID:</b></label>
+             
+                <input type="text" class="gui-input" id="s_asset_module_id" placeholder="Module ID"
+                  name="s_asset_module_id" required>
+
+              </div>
+              <div class="col-md-6">
+                <label for="U Location"><b>U Location:</b></label>
+              
+                <input type="text" class="gui-input" id="s_asset_u_loc" placeholder=" U Location" name="s_asset_u_loc"
+                  required>
+              </div>
+            </div>
+
+            <div class="section row" id="spy1">
+
+              <div class="col-md-6">
+                <label for="Current(A)"><b>Current(A):</b></label>
+            
+                <input type="text" class="gui-input" id="s_asset_current" placeholder="Current(A)"
+                  name="s_asset_current" required>
+
+              </div>
+              <div class="col-md-6">
+                <label for="Rated Power(KVA)"><b>Rated Power(KVA):</b></label>
+            
+                <input type="text" class="gui-input" id="s_asset_rated_power" placeholder="Rated Power(KVA)"
+                  name="s_asset_rated_power" required>
+              </div>
+            </div>
+            <div class="section row" id="spy1">
+
+              <div class="col-md-6">
+                <label for="Power Number"><b>Power Number:</b></label>
+            
+                <input type="text" class="gui-input" id="s_asset_power" placeholder="Power Number" name="s_asset_power"
+                required>
+
+              </div>
+              <div class="col-md-6">
+                <label for="Weight"><b>Weight(kg):</b></label>
+             
+                <input type="text" class="gui-input" id="s_asset_weight" placeholder="Weight(kg)" name="s_asset_weight"
+                 required>
+              </div>
+            </div>
+            <div class="section row" id="spy1">
+
+              <div class="col-md-6">
+                <label for="Principal"><b>Principal:</b></label>
+              
+                <input type="text" class="gui-input" id="s_asset_principal" placeholder="Principal"
+                  name="s_asset_principal" required>
+
+              </div>
+              <div class="col-md-6">
+                <label for="Contact Way"><b>Contact Way:</b></label>
+              
+                <input type="text" class="gui-input" id="s_contact_way" placeholder="Contact Way" name="s_contact_way"
+                  required>
+              </div>
+            </div>
+
+            <div class="section row" id="spy1">
+
+              <div class="col-md-6">
+                <label for="First Time"><b>First Time:</b></label>
+             
+                <input type="date" class="gui-input" id="d_first_time" placeholder="First Time" name="d_first_time"
+                  required>
+
+              </div>
+              <div class="col-md-6">
+                <label for="Last Time"><b>Last Time:</b></label>
+            
+                <input type="date" class="gui-input" id="d_last_time" placeholder="Last Time" name="d_last_time"
+                  required>
+
+              </div>
+            </div>
+            <div class="section row" id="spy1">
+
+              <div class="col-md-6">
+                <label for="Purchase Price"><b>Purchase Price:</b></label>
+              
+                <input type="number" class="gui-input" id="s_purchase_price" placeholder="Purchase Price"
+                  name="s_purchase_price" required>
+
+              </div>
+              <div class="col-md-6">
+                <label for="Retirement Price"><b>Retirement Price:</b></label>
+             
+                <input type="number" class="gui-input" id="s_retirement_price" placeholder="Retirement Price"
+                  name="s_retirement_price" required>
+
+              </div>
+            </div>
+            <div class="section row" id="spy1">
+
+              <div class="col-md-6">
+                <label for="Last Repair Time"><b>Last Repair Time:</b></label>
+              
+                <input type="date" class="gui-input" id="d_last_repair_time" placeholder="Last Repair Time"
+                  name="d_last_repair_time" required>
+
+              </div>
+              <div class="col-md-6">
+                <label for="Repair Cycle"><b>Repair Cycle:</b></label>
+              
+                <input type="number" class="gui-input" id="s_repair_cycle" placeholder="Repair Cycle"
+                  name="s_repair_cycle" required>
+
+              </div>
+            </div>
+
+            <div class="section row" id="spy1">
+
+              <div class="col-md-6">
+                <label for="Repair Company"><b>Repair Company:</b></label>
+           
+                <input type="text" class="gui-input" id="s_repair_company" placeholder="Repair Company"
+                  name="s_repair_company" required>
+
+              </div>
+              <div class="col-md-6">
+                <label for="Repair Principal"><b>Repair Principal:</b></label>
+             
+                <input type="text" class="gui-input" id="s_repair_principal" placeholder="Repair Principal"
+                  name="s_repair_principal" required>
+
+              </div>
+            </div>
+            <div class="section row" id="spy1">
+
+              <div class="col-md-6">
+                <label for="Repair Contact Way:"><b>Repair Contact Way:</b></label>
+             
+                <input type="text" class="gui-input" id="s_repair_contact_way" placeholder="Repair Contact Way"
+                  name="s_repair_contact_way" required>
+
+              </div>
+              <div class="col-md-6">
+                <label for="IP Address"><b>IP Address:</b></label>
+              
+                <input type="text" class="gui-input" id="s_ip_address" placeholder="IP Address" name="s_ip_address"
+                  required>
+
+              </div>
+            </div>
+            <div class="section row" id="spy1">
+
+              <div class="col-md-6">
+                <label for="Note:"><b>Note:</b></label>
+               
+             
+                <span class="pull-right">chars left</span><span class="pull-right" id="max-length-element">300</span>  <br> 
+                <textarea class="gui-input textarea-grow" id="s_note" rows="4" spellcheck="true"  required></textarea>
+                <!-- <textarea class="gui-input" id="s_note" rows="4" spellcheck="true" placeholder="Note"
+                  data-validation="required"></textarea> -->
+              </div>
+
+
+
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 col-sm-6 ">
+                <button type="button" id="saveAsset" class="btn active btn-info btn-sm">Save</button>
+                <button type="button" id="updateAsset" class="btn active btn-info btn-sm">Update</button>
+                <button type="reset" id="reset" class="btn active btn-warning btn-sm"
+                  onclick="divopennclose_()">Back</button>
+
+                <input type="hidden" id="n_asset_id" class="form-control" name="n_asset_id">
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+</section>
+
+
+
+<script>
+  $.validate({
+    modules: 'html5,file'
+   
+  });
+  $('#s_note').restrictLength($('#max-length-element'));
+</script>
+<script src="../assets/javascript/asset.js"></script>
+<!-- <script src="../assets/javascript/asset.js"></script> -->

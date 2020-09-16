@@ -1,0 +1,4 @@
+[2020-09-08T22:07:32.872] [ERROR] app - { status: 500,
+  mess: 'Record not Found !',
+  mess_body: 'Somthing went Wrong.',
+  data: 'record "new" has no field "n_rake_id"' }

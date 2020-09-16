@@ -1,0 +1,336 @@
+
+
+<head>
+  <style>
+    .img-wrap {
+      position: relative;
+      display: inline-block;
+      border: 1px red solid;
+      font-size: 0;
+  }
+  .img-wrap .close {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      z-index: 100;
+      background-color: #FFF;
+      padding: 5px 2px 2px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      opacity: .2;
+      text-align: center;
+      font-size: 22px;
+      line-height: 10px;
+      border-radius: 50%;
+  }
+  .img-wrap:hover .close {
+      opacity: 1;
+  }
+  </style>
+</head>
+<center>
+  <h3>System Parameter Master
+</center>
+
+<div class="col-md-12" id="data_tab">
+  <div class="panel">
+
+    <div class="panel-heading">
+      <span class="panel-icon"></span>
+      <span class="panel-title"> System Parameter Master</span>
+
+
+      <!-- <button data-toggle="modal" data-target="#user_model" type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#user_model"onclick="refresh();" style="margin-top: 5px;">ADD User DATA</button> -->
+      <button type="button" class="btn active btn-info btn-sm pull-right " onclick="divopennclose();"
+        style="margin-top: 5px;margin-left:8px" title="Add New  Record"><span class="glyphicon glyphicon-plus"> </span></button>
+
+        <!-- <button type="button" class="btn active btn-info btn-sm pull-right " onclick="view_deleted_rec();"
+        style="margin-top: 5px;margin-left:8px" title="Deleted  Record"><span>Deleted Rec</span></button> -->
+
+        <button class="btn active btn-info btn-sm pull-right"  style="margin-top: 5px;"
+			  onclick="view_deleted_rec();" title="Show Deleted Users"><i
+          class="ps-icon fa fa-recycle"></i></button>
+          <!-- id="deleterecord"     id="nondeleterecord"-->
+
+          <button class="btn active btn-info btn-sm pull-right" 
+			  style="margin-top: 5px;margin-right:6px" onclick="show_system_data()"><i class="ps-icon fa fa-refresh"></i></button>
+    </div>
+    <div class="panel-body" id="userlisttbl">
+
+      <table class="table table-striped table-bordered datatab" id="get_systemParameterData" style="width:100%">
+        <thead class="thead-light">
+          <tr>
+
+            <th>Action</th>
+            <th> Email Setting</th>
+            
+            <th> Captha Setting</th>
+             
+            <th>Database Connection Setting </th>
+           
+            <th >Company Name</th>
+         
+             
+           
+          </tr>
+        </thead>
+      </table>
+      </table>
+    </div>
+    <div class="panel-body" id="deleted_system_data">
+
+      <table class="table table-striped table-bordered datatab" id="system_delete_data" style="width:100%">
+        <thead class="thead-light">
+          <tr>
+
+            <th> Email Setting</th>
+            
+            <th> Captha Setting</th>
+             
+            <th>Database Connection Setting </th>
+           
+            <th >Company Name</th>
+         
+             
+          </tr>
+        </thead>
+      </table>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- ************************************************************************************************************** -->
+<!-- 
+<div class="col-md-12" id="deleted_system_data">
+  <div class="panel">
+
+    <div class="panel-heading">
+      <span class="panel-icon"></span>
+      <span class="panel-title"> System Parameter Master</span>
+
+      <button type="button" class="btn active btn-info btn-sm pull-right " onclick="show_system_data();"
+      style="margin-top: 5px;margin-left:8px" title="Add New Record"><span>view all data</span></button>
+    </div>
+    <div class="panel-body">
+
+      <table class="table table-striped table-bordered datatab" id="system_delete_data" style="width:100%">
+        <thead class="thead-light">
+          <tr>
+
+            <th> Email Setting</th>
+            
+            <th> Captha Setting</th>
+             
+            <th>Database Connection Setting </th>
+           
+            <th >Company Name</th>
+         
+             
+          </tr>
+        </thead>
+      </table>
+      </table>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- ***************************************************************************************************************** -->
+
+
+<section id="content_form" class="table-layout">
+
+  <div class="tray tray-center" style="height: 610px;">
+
+   
+
+    <div class="admin-form theme-primary mw1000 center-block" style="padding-bottom: 175px;">
+      <div class="panel heading-border panel-primary">
+        <form id="form-systemParameter" method="post" onsubmit="return false;">
+          <div class="panel-body bg-light">
+            <div class="section-divider mt20 mb40">
+              <span> System Partameter Master</span>
+            </div>
+
+            <div class="section row" id="spy1">
+              <div class="col-md-6">
+<label for="email"> Email Setting :</label><span id="max-length-element1" style=" padding-left: 271px; ">200</span> chars left <br> 
+                <label for="systemn_parameter" class="field">
+            
+              <input type="hidden" id="n_system_param_id" class="form-control" placeholder="Type Here...">
+                  <textarea class="gui-input textarea-grow input-sm" spellcheck="true"  id="s_email_setting" name="s_email_setting" rows="4"
+                    placeholder="Enter Email Setting" data-validation="required" required></textarea>
+
+
+                    
+
+
+                  <!-- <label for="systemn_parameter" class="field-icon"> -->
+                    <!-- <i class="fa fa-user"></i> -->
+                  </label>
+                </label>
+              </div>
+
+              <div class="col-md-6">
+                <label for="Captha"> Captha Setting :</label><span id="max-length-element2" style=" padding-left: 265px; ">200</span> chars left <br> 
+
+                <label for="captha_setting" class="field">
+                  <!-- <input type="text" name="s_last_name" id="s_last_name" class="gui-input" placeholder="Last name"
+                    data-validation="required"> -->
+
+                    <textarea class="gui-input textarea-grow" id="s_captha_setting" name="s_captha_setting" rows="4"
+                    placeholder="Enter Captha Setting" data-validation="required" required></textarea>
+
+                  <label for="captha_setting" >
+                  </label>
+                </label>
+              </div>
+           
+            </div>
+            <div class="section row" id="spy1">
+              <div class="col-md-6">
+                <label for="database"> Database Setting :</label><span id="max-length-element3" style=" padding-left: 250px; ">200</span> chars left <br> 
+
+                <label for="database_setting" class="field ">
+                  <textarea class="gui-input textarea-grow" id="s_database_connection_setting" name="s_database_connection_setting" rows="4"
+                  placeholder="Enter Database Connection Setting" data-validation="required" required></textarea>
+                  <label for="database_setting">
+                  </label>
+                </label>
+              </div>
+              <div class="col-md-6">
+                <label for="company"> Company Name :</label>
+
+                <label for="company_name" class="field ">
+                  <input type="text" class="form-control" id="s_company_name" name="s_company_name" placeholder="Enter Company Name"
+                    data-validation="required">
+                    
+                  <label for="company_name" >
+
+                   
+                  </label>
+                </label>
+              </div>
+
+
+
+            </div>
+            <div class="section row" id="spy1">
+              <div class="col-md-2">
+                <!-- <label for="floor">Logo :</label> -->
+                <a
+                class="btn btn-info btn-gradient dark btn-block"
+                data-toggle="modal" data-target="#logo" onclick="setItemId();">Add Images</a>
+  
+              </div>
+             
+          
+
+            </div>
+            <div class="section row" id="spy1">
+              
+              <div class="col-md-10" id="imggal_main">
+             
+              </div>
+          
+
+            </div>
+          
+
+
+
+
+            <div class="row">
+              <div class="col-md-6 col-sm-6 ">
+                <button type="button" class="btn active btn-info btn-sm" id="save_system_Prameter">Save</button>
+                <button type="button" class="btn active btn-info btn-sm" id="update_system_Prameter"
+                  style="display: none;">Update</button>
+                <button type="reset" id="resetuser" class="btn active btn-warning btn-sm"
+                  onclick="divopennclose_()">Back</button>
+              </div>
+            </div>
+
+          </div>
+
+
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="modal" id="logo">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <button type="button" class="close" id="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" style="text-align: center">Form</h4>
+
+      </div>
+
+      <br>
+      <div class="modal-body" style="margin-top: -30px;">
+
+        <form action="/uploadImg" method="post" enctype="multipart/form-data" target="img_iframe">
+
+          <div class="row">
+
+            <div class="col-md-6">
+
+              <input type="hidden" name="logoid" id="logoid">
+                                        
+                <input type="hidden" name="n_system_param_id1" id="n_system_param_id1">
+                <input type="hidden" name="s_login_id" id="s_login_id">
+
+                <input type="hidden" name="s_type" id="s_type" value="logo">
+
+              <label for="Rake Model">logo :</label>
+              <input type="file" class="form-control form-control-sm" name="s_filename" id="s_filename"
+              data-validation="required">
+
+            </div>
+          </div>
+          <br>
+
+
+
+          <button type="submit" id="saveRake" class="btn active btn-info btn-sm">Save</button>
+        
+
+        </form>
+        <iframe id="img_iframe" name="img_iframe" style="display:none;"></iframe>
+                            <div class="row" id="imggal">
+    
+                            </div>
+
+      </div>
+
+      <!-- Modal footer -->
+
+
+    </div>
+  </div>
+</div>
+
+
+<script>
+  $.validate({
+    modules: 'html5,file'
+  });
+  $('#s_email_setting').restrictLength($('#max-length-element1'));
+  $('#s_captha_setting').restrictLength($('#max-length-element2'));
+  $('#s_database_connection_setting').restrictLength($('#max-length-element3'));
+
+  
+  
+
+  $("#content_form").hide();
+</script>
+<script src="./assets/javascript/systemparameter.js"></script>

@@ -1,0 +1,148 @@
+
+
+<center><h3>User Master</center>
+  
+    <div class="col-md-12">
+      <div class="panel">
+    
+        <div class="panel-heading">
+          <span class="panel-icon"></span>
+          <span class="panel-title"> User Master</span>
+    
+    
+          <button type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#user_model" onclick="refresh();" style="margin-top: 5px;">ADD USER
+            DATA</button>
+        </div>
+        <div class="panel-body">
+    
+          <table class="table table-stripped table-condensed table-sm" id="makerTable12" style="width:100%">
+              <thead class="thead-light">
+                  <tr>
+                      <!-- <th>Sr No</th> -->
+                      <th>User Name</th>
+                      <th>User EmailID</th>
+                      <th>User DOB</th>
+                      <th>User Contact No.</th>
+                     
+                      <!-- <th>Brand Story</th> -->
+          
+                      <th>Action</th>
+                  </tr>
+              </thead>
+          </table>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="modal" id="user_model">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+    
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <button type="button" class="close" id="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title" style="text-align: center">Form</h4>
+    
+          </div>
+    
+          <br>
+          <div class="modal-body" style="margin-top: -30px;">
+    
+              <form id="form-user"  method="post"  onsubmit="return false;">
+                  <div class="row">
+                      <div class="col-md-6">
+      
+                          <input type="hidden" class="form-control" id="n_user_seq" placeholder="Enter email"
+                              name="n_user_seq">
+                      </div>
+      
+      
+                      <div class="col-md-6">
+      
+                          <input type="hidden" class="form-control" id="s_user_id" placeholder="Enter email"
+                              name="s_user_id" >
+      
+                      </div>
+                  </div>
+      
+                  <div class="row">
+                      <div class="col-md-6">
+                          <label for="pwd">User Name:</label>
+                          <input type="text" class="form-control" id="s_user_name" placeholder="Enter User Name"
+                              name="s_user_name" data-validation="required">
+                      </div>
+                  
+                  
+                      <div class="col-md-6">
+                          <label for="pwd">User EmailID:</label>
+                          <input type="email" class="form-control" id="s_email" placeholder="Enter User Email ID"
+                              name="s_email" data-validation="required">
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <label for="pwd">User DOB:</label>
+                          <input type="date" class="form-control" id="d_dob" placeholder="Enter User Name"
+                              name="d_dob" required>
+                      </div>
+                  
+                 
+                      <div class="col-md-6">
+                          <label for="pwd">User Contact Number:</label>
+                          <input type="Number" class="form-control" id="n_con_number" placeholder="Enter User Contact Number"
+                              name="n_con_number" required>
+                      </div>
+                  </div>
+      
+                  <div class="row">
+                      <div class="col-md-6">
+                          <label for="pwd">Password:</label>
+                          <input type="password" class="form-control" id="s_pass" placeholder="Enter User Name"
+                              name="s_pass" data-validation="required">
+                      </div>
+                  
+                      <div class="col-md-6">
+                          <label for="pwd">About User:</label>
+                          <!-- <input type="text" class="form-control" id="s_about_me" placeholder="Enter User Name" name="s_about_me" data-validation="required"> -->
+  
+                              <textarea class="form-control textarea-grow" id="s_about_me" name="s_about_me" rows="4"
+                              placeholder="Enter About User" data-validation="required"></textarea>
+              
+                      </div>
+                  </div>
+      
+                  <br>
+                  <div class="row">
+                      <div class="col-md-6">
+                      <!-- <button type="button" class="btn btn-primary">Submit</button> -->
+                      <button type="submit" class="btn active btn-info btn-sm" id="saveuser">Save</button>
+                      <button type="submit" class="btn active btn-info btn-sm" id="updateuser" style="display: none;">Update</button>
+                      <button type="reset"  id="resetuser" class="btn active btn-warning btn-sm">Reset</button>
+                      <!-- <button type="button" class="btn active btn-info btn-sm">Back</button> -->
+                  </div>
+                  </div>
+              </form>
+    
+          </div>
+        </div>
+      </div>
+      </div>
+      <script>
+        $.validate({
+          modules: 'html5'
+        });   
+      </script>
+    
+  
+  
+  
+  <!-- <script>alert("l")</script> -->
+  <script>
+      $.validate({
+          modules: 'html5'
+      });
+  </script>
+  <script src="../../assets/javascript/user_master.js"></script>
+  <!-- <script src="/public/assets/javascript/user_master.js"></script> -->

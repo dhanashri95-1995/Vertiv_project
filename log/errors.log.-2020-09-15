@@ -1,0 +1,22 @@
+[2020-09-15T19:30:27.260] [ERROR] app - { status: 500,
+  mess: 'Error !',
+  mess_body: 'Server side Error.',
+  err:
+   { Error: connect ECONNREFUSED 127.0.0.1:5434
+       at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1097:14)
+     errno: 'ECONNREFUSED',
+     code: 'ECONNREFUSED',
+     syscall: 'connect',
+     address: '127.0.0.1',
+     port: 5434 } }
+[2020-09-15T19:30:34.299] [ERROR] app - { status: 500,
+  mess: 'Error !',
+  mess_body: 'Server side Error.',
+  err:
+   { Error: connect ECONNREFUSED 127.0.0.1:5434
+       at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1097:14)
+     errno: 'ECONNREFUSED',
+     code: 'ECONNREFUSED',
+     syscall: 'connect',
+     address: '127.0.0.1',
+     port: 5434 } }

@@ -1,0 +1,102 @@
+
+  <center><h3>Data Center Location Master</center>
+
+
+
+
+    <div class="col-md-12">
+      <div class="panel">
+        
+      <div class="panel-heading">
+      <span class="panel-icon"></span>
+      <span class="panel-title"> Data Center Location Master</span>
+      <button type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#myModalfordcloc"
+      onclick="nulldata();" style="margin-top: 5px;">ADD Data Center Location 
+     </button>
+       </div>
+       <br>
+      <div class="panel-body">
+        
+          <table class="table table-stripped table-condensed table-sm" id="locationmaster" style="width:100%">
+            <thead>
+              <tr role="row">
+                <th>Datacenter Description</th>
+                <th>Country Name</th>
+                <th>State Name</th>
+
+
+                <th>Action</th>
+    
+              </tr>
+            </thead>
+          </table>
+      </div>
+      </div>
+      </div>
+    
+    
+      <div class="modal" id="myModalfordcloc">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+    
+                <div class="modal-header">
+                    <button type="button" class="close" id="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" style="text-align: center">Form</h4>
+    
+                </div>
+                <br>
+    
+                <div class="modal-body" style="margin-top: -30px;">
+                    <form id="form-location" method="post" onsubmit="return false;">
+    
+    
+    
+    
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="s_datacenter_desc">Datacenter Description:</label>
+                                <input type="text" class="form-control" id="s_datacenter_desc"
+                                    placeholder="Enter datacenter description" name="s_datacenter_desc"
+                                    data-validation="required">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="n_country_id">Country Name:</label>
+                                <select id="n_country_id" name="n_country_id" class="form-control" required onchange="get_state_id();">
+                                </select>
+                            </div>
+    
+                        </div>
+    
+    
+                        <div class="row">
+    
+                            <div class="col-md-6">
+                                <label for="n_state_id">State Name :</label>
+                                <select id="n_state_id" class="form-control" name="n_state_id" required>
+                                    <option label="Select State Name"></option>
+                                </select>
+    
+                            </div>
+                            <div class="col-md-6">
+                                <input type="hidden" class="form-control" id="n_datacenter_id" placeholder="Enter email"
+                                    name="n_datacenter_id">
+                            </div>
+                        </div><br><br>
+                        <button type="submit" class="btn active btn-info btn-sm" id="savelocation">Save</button>
+                        <button type="submit" class="btn active btn-info btn-sm" id="updatelocation">Update</button>
+                        <button type="reset" id="reset" class="btn active btn-warning btn-sm">Reset</button>
+                </div>
+            </div>
+            </form>
+        </div>
+    
+    
+    
+    
+    </div>
+    <script>
+      $.validate({
+        modules: 'html5'
+      });
+    </script>
+   <script src="../../assets/javascript/datacenter_location.js"></script>

@@ -1,0 +1,115 @@
+<center><h3>Custom Field Master</h3></center>
+<div class="col-md-4">
+  <div class="panel">
+  <div class="panel-heading">
+  <span class="panel-icon"></span>
+  <span class="panel-title"> Custom Field Master</span>
+   </div>
+  <div class="panel-body">
+      <form id="form-custom"  method="post"  onsubmit="return false;">
+          <div class="row">
+              <div class="form-group col-md-12 col-sm-12"">
+
+                  <input type="hidden" class="form-control" id="n_user_seq" placeholder="Enter email"
+                      name="n_user_seq">
+              </div>
+              <div class="form-group col-md-12 col-sm-12"">
+
+                  <input type="hidden" class="form-control" id="s_user_id" placeholder="Enter email"
+                      name="s_user_id" >
+
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="form-group col-md-12 col-sm-12"">
+                  <label for="pwd">select table:</label>
+                   <select class="form-control" id="s_tbl_name" name="s_tbl_name" required>
+                    <option label="select table"></option>
+                    <option value="tbl_alert_master">alert master</option>
+                    <option value="tbl_alert_trasaction">alert transaction master </option>
+                    <option value="tbl_system_parameter"> system parameter master</option>
+                  </select>
+              </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-12 col-sm-12"">
+                <label for="pwd">Field Name:</label>
+                <input type="hidden" id="n_customfield_id" class="form-control" placeholder="Type Field Name Here...">
+                    <input type="text" id="s_field_nam" name="s_field_nam" class="form-control" placeholder="Type Here..." data-validation="required" required>
+
+                    <!-- <input class="form-control" placeholder="Project Name" type="text"
+               
+                name="s_field_nam" id="s_field_nam" validator="required" required-success-message="Good Required" required-error-message="This should be Required!!"
+                valid-method="watch;submit-only" > -->
+
+
+
+
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-12 col-sm-12"">
+              <label for="pwd">select Input Type:</label>
+              <select class="form-control" id="s_field_type" name="s_field_type" required>
+                <option label="select Input type"></option>
+                <option value="Text">Text</option>
+                <option value="Currency">Currency</option>
+                <option value="Select">Select</option>
+                <option value="Date">Date</option>
+                <option value="Email">Email</option>
+                <option value="File">File</option>
+                <option value="Number">Number</option>
+                <option value="Time">Time</option>
+
+
+              </select>
+          </div>
+      </div>
+
+          <br>
+          <div class="row">
+              <div class="col-md-6">
+              <!-- <button type="button" class="btn btn-primary">Submit</button> -->
+              <button type="submit" class="btn active btn-info btn-sm" id="save_custom">Save</button>
+              <button type="submit" class="btn active btn-info btn-sm" id="btnupdate_custom">Update</button>
+              <button type="reset"  id="resetuser" class="btn active btn-warning btn-sm">Reset</button>
+              <!-- <button type="button" class="btn active btn-info btn-sm">Back</button> -->
+          </div>
+          </div>
+      </form>
+  </div>
+  </div>
+  </div>
+  <div class="col-md-8">
+      <div class="panel">
+      <div class="panel-heading">
+      <span class="panel-icon"></span>
+      <!-- <span class="panel-title"> Form</span> -->
+       </div>
+      <div class="panel-body">
+          <table class="table table-stripped table-condensed table-sm" id="field_data" style="width:100%">
+              <thead class="thead-light">
+                  <tr>
+                      <!-- <th>Sr No</th> -->
+                      <th>Name</th>
+                      <th>field name Story</th>
+                      <th>field type Story</th>
+
+                      <th>Action</th>
+                  </tr>
+              </thead>
+          </table>
+      </div>
+      </div>
+      </div>
+      <script>
+        $.validate({
+            modules: 'html5,file'
+        });
+        // $('#s_about_me').restrictLength( $('#max-length-element') );
+      </script>
+      <!-- <script src="/public/assets/javascript/alert.js"></script> -->
+      <script src="./assets/javascript/customfield.js"></script>

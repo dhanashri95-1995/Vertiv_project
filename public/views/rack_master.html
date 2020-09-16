@@ -1,0 +1,159 @@
+
+<center>
+  <h3>Rack Master
+</center>
+
+<div class="col-md-12" id="racklisttbl">
+  <div class="panel">
+    <div class="panel-heading">
+      <span class="panel-icon"></span>
+      <span class="panel-title"> RackList</span>
+      
+      <button type="button" class="btn active btn-info btn-sm pull-right" onclick="rackopenclose();"
+        style="margin-top: 5px;margin-left:8px" title="Add New Record"><span class="glyphicon glyphicon-plus"> </span></button>
+        <button type="button" class="btn active btn-info btn-sm pull-right" onclick="get_Deleted_Rack_Data();"
+        style="margin-top: 5px;margin-left:8px" title="Deleted Data"><i class="ps-icon fa fa-recycle"></i> </span></button>
+        <button type="button" class="btn active btn-info btn-sm pull-right" onclick="get_Rack_Data();"
+        style="margin-top: 5px;margin-left:8px" title="Refresh"><span class="glyphicon glyphicon-refresh"> </span></button>
+       
+    </div>
+    <div class="panel-body" id="get_rack_panel">
+
+      <table class="table table-striped table-bordered datatab" id="rack_table">
+        <thead class="thead-light">
+          <tr>
+            <th>Action</th>
+            <th> Data Center</th>
+            <th>Floor Location</th>
+            <th>Room No.</th>
+            <th> Rack Name</th>
+            <th>Racku ID</th>
+            <th>Asset Code</th>
+            <th>Status</th>
+            <th> Rack Model</th>
+           
+          </tr>
+        </thead>
+      </table>
+    
+    </div>
+    <div class="panel-body" id="delete_rack_panel">
+
+      <table class="table table-striped table-bordered datatab"  id="Deleted_rack_table">
+        <thead class="thead-light">
+          <tr>
+            <th> Data Center</th>
+            <th>Floor Location</th>
+            <th>Room No.</th>
+            <th> Rack Name</th>
+            <th>Racku ID</th>
+            <th>Asset Code</th>
+            <th>Status</th>
+            <th> Rack Model</th>
+          </tr>
+        </thead>
+      </table>
+    
+    </div>
+  </div>
+</div>
+
+<section id="content_form" class="table-layout">
+
+  <div class="tray tray-center" style="height: 610px;">
+    <div class="admin-form theme-primary mw1000 center-block" style="padding-bottom: 175px;">
+      <div class="panel heading-border panel-primary">
+        <form id="form-rack" method="post" onsubmit="return false;">
+          <div class="panel-body bg-light">
+            <button type="reset" class="close" onclick="rackopenclose_()">Back</button>
+            <div class="section-divider mt20 mb40">
+              <span>Rack Master Form </span>
+            </div>
+            <div class="section row" id="spy1">
+              <div class="col-md-6">
+                <label for="DataCenter" class="field prepend-icon"><b>Data Center Name:</b></label>
+                <select id="n_datacenter_id"class="form-control input-sm" name="n_datacenter_id" data-validation="required"
+                  onchange="get_floor_loc();">
+                  <option label="Select Datacenter Name"></option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label for="floor" class="field prepend-icon"><b>Floor Location :</b></label>
+                <select id="n_door_id" class="form-control input-sm" name="n_door_id" data-validation="required"
+                  onchange=" get_data_center_room();">
+                  <option label="Select floor"></option>
+                </select>
+              </div>
+
+            </div>
+            <div class="section row" id="spy1">
+              <div class="col-md-6">
+                <label for="room" class="field prepend-icon"><b>Room No:</b></label>
+                <select id="n_room_id" class="form-control input-sm" name="n_room_id" data-validation="required">
+                  <option label="Select Room Number"></option>
+                </select>
+              </div>
+              <!-- minlength="6" maxlength="6" -->
+              <div class="col-md-6">
+                <label for="Rack Name" class="field prepend-icon"><b>Rack Name:</b></label>
+                <input type="text" class="form-control input-sm" id="s_rack_name"  placeholder=" Rack Name" name="s_rack_name"
+                  required>
+              </div>
+
+            </div>
+            <div class="section row" id="spy1">
+              <div class="col-md-6">
+                <label for="Number of Rack" class="field prepend-icon"><b>Number of Racku:</b></label>
+                <input type="number" min="0" max="48"  class="form-control input-sm" id="s_racku_no" placeholder="Number of RackU" name="s_racku_no"
+                  required>
+          
+              </div>
+              <div class="col-md-6">
+                <label for="Rack Code" class="field prepend-icon"><b> Rack Code:</b></label>
+                <input type="text" class="form-control input-sm"  id="s_rack_code" placeholder=" Rack Code" name="s_rack_code"
+                  data-validation="required">
+              </div>
+            </div>
+
+            <div class="section row" id="spy1">
+              <div class="col-md-6">
+                <label for="status" class="field prepend-icon"><b>Status:</b></label>
+                <select id="n_rack_status" class="form-control input-sm" name="n_rack_status" data-validation="required">
+                  <option label="Select rack Status"></option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="Rack Model" class="field prepend-icon"><b>Rack Model:</b></label>
+                <input type="text" id="s_rack_model" class="form-control input-sm" placeholder="Rack Model"
+                  name="s_rack_model" data-validation="required">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-sm-6">
+                <input type="hidden" id="n_rack_id" class="form-control" name="n_rack_id">
+                <button type="button" class="btn active btn-info btn-sm" id="saveRack">Save</button>
+                <button type="button" class="btn active btn-info btn-sm" id="updateRack"
+                  style="display: none;">Update</button>
+                <button type="reset" id="reset" class="btn active btn-warning btn-sm"
+                  onclick="rackopenclose_()">Back</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<script>
+  $.validate({
+    modules: 'html5,file'
+  });
+  $("#content_form").hide();
+
+</script>
+<script src="../assets/javascript/rack_master.js"></script>

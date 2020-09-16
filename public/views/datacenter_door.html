@@ -1,0 +1,189 @@
+ <center>
+  <h3>Datacenter Floor Master
+  </center>
+  
+<div class="col-md-12" id="floorlisttbl">
+  <div class="panel" id="panel">
+
+   
+
+
+
+<div class="panel-heading">
+  <span class="panel-icon"></span>
+  <span class="panel-title">Floor List</span>
+
+  <!-- <button data-toggle="modal" data-target="#user_model" type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#user_model"onclick="refresh();" style="margin-top: 5px;">ADD User DATA</button> -->
+  <button type="button" class="btn active btn-info btn-sm pull-right " onclick="divopennclose();"  style="margin-top: 5px;margin-left:8px" title=""><span class="glyphicon glyphicon-plus" data-toggle="tooltip1" title="Add New Record"> </span></button>
+  <!-- <button class="btn active btn-info btn-sm pull-right" style="margin-top: 5px;" onclick="deletedoorrecord('1');hideonecell();" title="Show Deleted Users"><i class="ps-icon fa fa-recycle"></i></button><button class="btn active btn-info btn-sm pull-right" style="margin-top: 5px;margin-right:6px" onclick="get_datacenter_door_Data();"><i class="ps-icon fa fa-refresh"></i></button> -->
+    
+</div>
+<div class="panel-body" id="alldataofdoor">
+  <table class="table table-striped table-bordered datatab" id="doormaster" >
+    <thead class="thead-light">
+      <tr>
+    
+<th style="width:15%;">Action</th>
+<th style="width:15%;">Add Room</th>
+        <th style="width:15%;">Datacenter Name</th>
+        <th style="width:15%;">Location Details</th>
+        <th style="width:15%;">Floor No</th>
+        <th style="width:15%;">Add door</th>
+        
+        
+      </tr>
+    </thead>
+  </table>
+  
+  
+</div>
+<div class="panel-body" id="deletedataofdoor">
+  <table class="table table-striped table-bordered datatab" id="doormaster1" >
+    <thead class="thead-light">
+      <tr>
+    
+      
+        <th style="width:25%;">Datacenter Name</th>
+        <th style="width:25%;">Location Details</th>
+        <th style="width:25%;">Floor No</th>
+        <th style="width:25%;">Add door</th>
+        
+        
+      </tr>
+    </thead>
+  </table>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+<section id="content_form_floor" class="table-layout">
+
+  <div class="tray tray-center" style="height: 610px;">
+  
+  
+  <div class="admin-form theme-primary mw1000 center-block" style="padding-bottom: 175px;">
+  <div class="panel heading-border panel-primary">
+  <form   id="form-floor" method="post" onsubmit="return false;">
+  <div class="panel-body bg-light">
+  <div class="section-divider mt20 mb40">
+  <span> Datacenter Floor Master Form </span>
+  </div>
+  <input type="hidden" class="form-control" id="n_door_id" placeholder="Enter email" name="n_door_id">
+
+  <div class="section row" id="spy1">
+  <div class="col-md-6">
+
+ 
+    <label for="DataCenter">Data Center Name:</label>
+                
+    <select class='form-control input-sm' id="n_datacenter_id"  name="n_datacenter_id"  data-validation="required" onchange="get_location();"> 
+      
+    
+  </select>
+  </div>
+  
+  <div class="col-md-6">
+  
+    <label for="n_data">Location Details:</label>
+               
+               
+    <textarea class="form-control input-sm" id="s_datacenter_location" rows="4" spellcheck="true" placeholder="Enter Location Details" data-validation="required" disabled></textarea>
+
+    
+
+  </div>
+  
+  </div>
+  <div class="section row" id="spy1">
+    <div class="col-md-6">
+      
+      <label for="s_floor_loc">Floor Location:</label>
+      <input type="text" class="form-control input-sm" id="s_floor_loc" placeholder="Enter Floor Id"
+          name="s_floor_loc" required>
+
+
+      </div>
+  <div class="col-md-6">
+    <label for="s_door_sensor_id">Door Sensor Id:</label>
+    <input type="text" class="form-control input-sm" id="s_door_sensor_id" placeholder="Enter Door Sensor Id"
+        name="s_door_sensor_id" data-validation="required">
+  </div>
+  
+  
+  
+  </div>
+ 
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-6 col-sm-6 " >
+      <button type="button" class="btn active btn-info btn-sm" id="savedoor">Save</button>
+      <button type="button" class="btn active btn-info btn-sm" id="updatedoor" 
+        style="display: none;">Update</button>
+      <button type="reset" id="reset" class="btn active btn-warning btn-sm" onclick="return_()">Back</button>
+    </div>
+  </div>
+
+
+  
+
+  
+  </div>
+  
+  
+  
+  </form>
+  </div>
+  </div>
+  
+  </div>
+  
+  
+  
+  
+  </section>
+ 
+
+
+
+
+<script>
+  $.validate({
+      modules: 'html5,file'
+  });
+  $("#content_form_floor").hide();
+
+  $("#deletedataofdoor").hide();
+	function hideonecell(){
+		$("#alldataofdoor").hide();
+		$("#deletedataofdoor").show();
+	}
+
+</script>
+<!-- 
+  <script>
+  tippy('#n_datacenter_id', {
+        content: "<strong>My Tooltip</strong>",
+        placement: 'left',
+        arrow: true,
+        arrowType: 'round',
+        animation: 'perspective',
+        theme: 'light',
+        duration: 500,
+        delay: 1000,
+        followCursor: true,
+      });
+
+</script> -->
+<!-- 
+<script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@4"></script> -->
+
+<script src="../../assets/javascript/datacenter_door.js"></script>
+
+<script src="../../assets/javascript/fstdropdown.js"></script> 

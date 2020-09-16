@@ -1,0 +1,285 @@
+<head>
+  <style>
+    .img-wrap {
+      position: relative;
+      display: inline-block;
+      border: 1px red solid;
+      font-size: 0;
+    }
+
+    .img-wrap .close {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      z-index: 100;
+      background-color: #FFF;
+      padding: 5px 2px 2px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      opacity: .2;
+      text-align: center;
+      font-size: 22px;
+      line-height: 10px;
+      border-radius: 50%;
+    }
+
+    .img-wrap:hover .close {
+      opacity: 1;
+    }
+  </style>
+</head>
+<center>
+  <h3>Custom Field Master
+</center>
+
+<div class="col-md-12" id="data_tab">
+  <div class="panel">
+
+    <div class="panel-heading">
+      <span class="panel-icon"></span>
+      <span class="panel-title"> Custom Field Master</span>
+
+
+      <!-- <button data-toggle="modal" data-target="#user_model" type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#user_model"onclick="refresh();" style="margin-top: 5px;">ADD User DATA</button> -->
+      <button type="button" class="btn active btn-info btn-sm pull-right " onclick="divopennclose();"
+        style="margin-top: 5px;margin-left:8px" title="Add New  Record"><span class="glyphicon glyphicon-plus">
+        </span></button>
+
+      <!-- <button type="button" class="btn active btn-info btn-sm pull-right " onclick="view_deleted_rec();"
+        style="margin-top: 5px;margin-left:8px" title="Deleted  Record"><span>Deleted Rec</span></button> -->
+
+      <button class="btn active btn-info btn-sm pull-right" style="margin-top: 5px;" onclick="view_deleterecord();"
+        title="Show Deleted Users"><i class="ps-icon fa fa-recycle"></i></button>
+      <!-- id="deleterecord"     id="nondeleterecord"-->
+
+      <button class="btn active btn-info btn-sm pull-right" style="margin-top: 5px;margin-right:6px"
+        onclick="showcustomdata()"><i class="ps-icon fa fa-refresh"></i></button>
+    </div>
+    <div class="panel-body" id="userlisttbl">
+
+      <table class="table table-striped table-bordered datatab" id="field_data" style="width:100%">
+        <thead class="thead-light">
+          <tr>
+            <th>Action</th>
+            <th>Table Name</th>
+            <th>Field Name </th>
+            <th>Field Input Type </th>
+         
+
+
+
+          </tr>
+        </thead>
+      </table>
+      </table>
+    </div>
+    <div class="panel-body" id="deleted_field_data">
+
+      <table class="table table-striped table-bordered datatab" id="fieldelete_data" style="width:100%">
+        <thead class="thead-light">
+          <tr>
+            <th>Table Name</th>
+            <th>Field Name </th>
+            <th>Field Input Type </th>
+          
+
+          </tr>
+        </thead>
+      </table>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- ************************************** -->
+<!-- 
+<div class="col-md-12" id="deleted_system_data">
+  <div class="panel">
+
+    <div class="panel-heading">
+      <span class="panel-icon"></span>
+      <span class="panel-title"> System Parameter Master</span>
+
+      <button type="button" class="btn active btn-info btn-sm pull-right " onclick="show_system_data();"
+      style="margin-top: 5px;margin-left:8px" title="Add New Record"><span>view all data</span></button>
+    </div>
+    <div class="panel-body">
+
+      <table class="table table-striped table-bordered datatab" id="system_delete_data" style="width:100%">
+        <thead class="thead-light">
+          <tr>
+
+            <th> Email Setting</th>
+            
+            <th> Captha Setting</th>
+             
+            <th>Database Connection Setting </th>
+           
+            <th >Company Name</th>
+         
+             
+          </tr>
+        </thead>
+      </table>
+      </table>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- *************************************** -->
+
+
+<section id="content_form" class="table-layout">
+
+  <div class="tray tray-center" style="height: 610px;">
+
+
+
+    <div class="admin-form theme-primary mw1000 center-block" style="padding-bottom: 175px;">
+      <div class="panel heading-border panel-primary">
+        <form id="form-custom" method="post" onsubmit="return false;">
+          <div class="panel-body bg-light">
+            <div class="section-divider mt20 mb40">
+              <span> Custom Field Master</span>
+            </div>
+
+            <div class="section row" id="spy1">
+              <div class="col-md-6">
+                <label for="email"> Select Table</label>
+                <label for="systemn_parameter" class="field">
+
+                  <select class="form-control input-sm" id="s_tbl_name" name="s_tbl_name" required>
+                    <option label="Select Table"></option>
+
+                    <option value="tbl_alert_master">Alert Master</option>
+                    <option value="tbl_alert_transaction">Alert Transaction Master </option>
+                    <option value="tbl_system_parameter"> System Parameter Master</option>
+
+                    <option value="tbl_role_master">Role Master</option>
+                    <option value="tbl_user_role_mapping">User Role Mapping  Master </option>
+                    <option value="tbl_status_master"> Status Master</option>
+
+                    <option value="tbl_rake_master">Rake Master</option>
+                    <option value="tbl_racku_master">Rakeu Master </option>
+                    <option value="tbl_asset_master"> Asset Master</option>
+
+                    <option value="tbl_asset_mapping">Asset Mapping Master</option>
+                    <option value="tbl_country_master">Country Master </option>
+                    <option value="tbl_state_master"> State Master</option>
+
+                    <option value="tbl_datacenter_location">Datacenter Location Master</option>
+                    <option value="tbl_datacenter_room">Datacenter Room Master </option>
+                    <option value="tbl_custom_fields"> Custom Fields Master</option>
+
+                  </select>
+
+                </label>
+                </label>
+              </div>
+
+              <div class="col-md-6">
+                <label for="Captha">Field Name</label>
+
+                <label for="captha_setting" class="field">
+                  <input type="hidden" id="n_customfield_id" class="form-control input-sm" placeholder="Type Field Name Here...">
+                      <input type="text" id="s_field_nam" name="s_field_nam" class="form-control input-sm" placeholder="Type Here..." data-validation="required" required>
+
+                  <label for="captha_setting">
+                  </label>
+                </label>
+              </div>
+
+            </div>
+            <div class="section row" id="spy1">
+              <div class="col-md-6">
+                <label for="database"> Placeholder Name :</label>
+
+                <label for="database_setting" class="field ">
+                  <input type="text" id="s_placeholder" name="s_placeholder" class="form-control input-sm" placeholder="Type Here..." data-validation="required" required>
+
+                  </label>
+                </label>
+              </div>
+              <div class="col-md-6">
+                <label for="company"> Default Value:</label>
+
+                <label for="company_name" class="field ">
+                  <input type="text" id="s_default_val" name="s_default_val" class="form-control input-sm" placeholder="Type Here..." data-validation="required" required>
+
+
+                  <label for="company_name">
+
+
+                  </label>
+                </label>
+              </div>
+
+            </div>
+
+            <div class="section row" id="spy1">
+              <div class="col-md-6">
+                <label for="database"> Select Input Type :</label>
+
+                <label for="database_setting" class="field ">
+                  <select class="form-control input-sm" id="s_field_type" name="s_field_type" required>
+                    <option label="Select Input Type"></option>
+                    <option value="Text">Text</option>
+                    <option value="Currency">Currency</option>
+                    <option value="Select">Select</option>
+                    <option value="Date">Date</option>
+                    <option value="Email">Email</option>
+                    <option value="File">File</option>
+                    <option value="Number">Number</option>
+                    <option value="Time">Time</option>
+    
+    
+                  </select>
+                </label>
+              </div>
+            
+
+            </div>
+           
+            <div class="row">
+              <div class="col-md-6 col-sm-6 ">
+                <!-- <button type="button" class="btn active btn-info btn-sm" id="save_system_Prameter">Save</button>
+                <button type="button" class="btn active btn-info btn-sm" id="update_system_Prameter"
+                  style="display: none;">Update</button>
+                <button type="reset" id="resetuser" class="btn active btn-warning btn-sm"
+                  onclick="divopennclose_()">Back</button> -->
+
+                  <button type="submit" class="btn active btn-info btn-sm" id="save_custom">Save</button>
+                  <button type="submit" class="btn active btn-info btn-sm" id="btnupdate_custom"
+                    style="display: none;">Update</button>
+                  <button type="reset" id="resetuser" class="btn active btn-warning btn-sm" onclick="divopennclose_()">Cancel</button>
+              </div>
+            </div>
+
+          </div>
+
+
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<script>
+  $.validate({
+    modules: 'html5,file'
+  });
+
+
+  $("#content_form").hide();
+</script>
+<!-- <script src="./assets/javascript/systemparameter.js"></script> -->
+<!-- <script src="/public/assets/javascript/customfield.js"></script> -->
+<script src="./assets/javascript/customfield.js"></script>

@@ -1,0 +1,222 @@
+<center>
+  <h3>Alert Master
+</center>
+<div class="col-md-4">
+
+  <section id="content_form" class="table-layout">
+
+    <div class="tray tray-center">
+
+      <!-- <div class="content-header">
+      <h2> AdminForms makes <b class="text-primary">Validation</b> is easier than ever</h2>
+      <p class="lead">Use the Admin Forms you know and love to help build the perfect form.</p>
+      </div> -->
+
+      <div class="admin-form theme-primary mw1000 center-block" style="padding-bottom: 175px;">
+        <div class="panel heading-border panel-primary">
+          <form id="form-alert" method="post" onsubmit="return false;">
+            <div class="panel-body bg-light">
+              <div class="section-divider mt20 mb40">
+                <span> Alert Master Form </span>
+              </div>
+
+              <div class="section row" id="spy1">
+
+                <div class="col-md-12">
+                  <input type="hidden" class="form-control" id="n_alert_id" name="n_alert_id"
+                    placeholder="Enter User Name" name="alert_id">
+                  <label for="alertname">Alert Name:</label>
+                  <input type="text" class="form-control input-sm" id="s_alert_name" placeholder="Enter Alert Name"
+                    name="s_alert_name" data-validation="required">
+                </div>
+
+              </div>
+
+              <div class="section row" id="spy1">
+                <div class="col-md-12">
+
+                  <label for="alertcode">Alert Code:</label>
+                  <input type="number" class="form-control input-sm" id="n_alert_code" placeholder="Enter Alert Code"
+                    name="n_alert_code" data-validation="required">
+                </div>
+              </div>
+
+              <div class="section row" id="spy1">
+                <div class="col-md-12">
+
+                  <label for="alertdesc">Alert Description:</label>
+                 
+                    <!-- <textarea class="gui-input textarea-grow" id="s_alert_msg_desc" name="s_alert_msg_desc" rows="4" placeholder="Enter alert description" data-validation="required" required></textarea> -->
+                    <span id="max-length-element" style=" padding-left: 160px; ">200</span> chars left <br> 
+                      <textarea class="form-control textarea-grow" id="s_alert_msg_desc"  name="s_alert_msg_desc" rows="4" spellcheck="true"></textarea>
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+              <div class="row">
+                <div class="col-md-12">
+                  <!-- <div class="form-group col-md-12 col-sm-12 "> -->
+                  <button type="submit" class="btn active btn-info btn-sm" id="save_alert">Save</button>
+                  <button type="submit" class="btn active btn-info btn-sm" id="btnupdate_alert"
+                    style="display: none;">Update</button>
+                  <button type="reset" id="resetuser" class="btn active btn-warning btn-sm">Cancel</button>
+                  <!-- </div> -->
+                </div>
+                <!-- <div class="col-md-6 col-sm-6 ">
+          <button type="button" class="btn active btn-info btn-sm" id="saveuser" >Save</button>
+          <button type="button" class="btn active btn-info btn-sm" id="updateuser"
+            style="display: none;">Update</button>
+          <button type="reset" id="resetuser" class="btn active btn-warning btn-sm" onclick="divopennclose_()">Back</button>
+        </div> -->
+              </div>
+
+
+
+
+
+
+
+            </div>
+
+
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+  </section>
+
+</div>
+<div class="col-md-8">
+  <div class="panel">
+    <div class="panel-heading">
+      <span class="panel-icon"></span>
+      <span class="panel-title">Alert List</span>
+      <button class="btn active btn-info btn-sm pull-right"  style="margin-top: 5px;"
+      onclick="view_deleted_alert();" title="Show Deleted Users"><i
+        class="ps-icon fa fa-recycle"></i></button>
+        <!-- id="deleterecord"     id="nondeleterecord"-->
+
+        <button class="btn active btn-info btn-sm pull-right" 
+      style="margin-top: 5px;margin-right:6px" onclick="showalertdata()"><i class="ps-icon fa fa-refresh"></i></button>
+        
+    </div>
+    <div class="panel-body" id="non_deleted_alert">
+      <table class="table table-striped table-bordered datatab" id="alert_data">
+        <thead class="thead-light">
+          <tr>
+
+            <th>Alert Name</th>
+            <th>Alert Code</th>
+            <th>Alert Description</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="panel-body" id="deleted_alert">
+      <table class="table table-striped table-bordered datatab" id="notdeleted_alert_data">
+        <thead class="thead-light">
+          <tr>
+
+            <th>Alert Name</th>
+            <th>Alert Code</th>
+            <th>Alert Description</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- <div class="modal" id="map_model">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+          <div class="modal-header">
+              <button type="button" class="close" id="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title" style="text-align: center">Form</h4>
+
+          </div>
+          <br>
+
+          <div class="modal-body" style="margin-top: -30px;">
+              
+              <form id="form-userrole" method="post" onsubmit="return false;">
+
+
+                  <div class="row">
+
+              
+                      <div class="form-group col-md-6 col-sm-6">
+                          <label for="username">User Name:</label>
+<select class="form-control form-control-sm" id="s_user_id" name="s_user_id"></select>
+                      </div>
+
+                      <input type="hidden" id="s_userrole_id">
+                      <input type="hidden" id="roleid">
+
+                      <div class=class="col-md-6 col-sm-6 ">
+                          <label for="username"></label>
+                          <br>
+                  <button type="submit" class="btn active btn-info btn-sm" id="saveuserrole">Save</button>
+                  <button type="submit" class="btn active btn-info btn-sm" id="updateuserrole">Update</button>
+                  <button type="reset" id="resetuserrole" class="btn active btn-warning btn-sm">Cancel</button>
+                      </div>
+                  </div>
+      </form>
+      <br>
+      
+      
+          <div class="panel">
+          <div class="panel-heading">
+          <span class="panel-icon"></span>
+          <span class="panel-title" >User Role Map List</span>
+           </div>
+          <div class="panel-body">
+              <legend><label>Role:</label><label id="rolename"></label></legend>
+             
+              <table class="table table-stripped table-condensed table-sm" id="userroletbl" style="width:100%">
+                  <thead class="thead-light">
+                      <tr>
+                        
+                          <th>User Name</th>
+                          <th>Role Name</th>
+                          <th>Action</th>
+                      </tr>
+                  </thead>
+              </table>
+          </div>
+          </div>
+          
+          
+  </div>
+
+  <div class="modal-footer">
+      <button type="button" class=" btn waves-effect waves-light hor-grd btn-grd-default btn-sm " data-dismiss="modal" id="close">Close</button>
+  </div>
+
+
+</div>
+</div>
+</div> -->
+<script>
+  $.validate({
+    modules: 'html5',
+
+  });
+  $('#s_alert_msg_desc').restrictLength( $('#max-length-element') );
+
+</script>
+<!-- <script src="../assets/javascript/role_master.js"></script> -->
+<script src="./assets/javascript/alert.js"></script>

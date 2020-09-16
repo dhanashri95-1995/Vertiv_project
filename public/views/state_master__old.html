@@ -1,0 +1,73 @@
+<center><h3>State Master</center>			  
+<div class="col-md-4">
+        <div class="panel">
+        <div class="panel-heading">
+        <span class="panel-icon"></span>
+        <span class="panel-title"> Form</span>
+         </div>
+        <div class="panel-body">
+            <form id="state_form"  method="post"  onsubmit="return false;">
+                      
+    
+                <div class="row">
+
+
+                        <div class="form-group col-md-12 col-sm-12">
+                                <label for="pwd">Country Name:</label>
+                                <select  class="form-control form-control-sm" id="n_country_id" 
+                                    name="n_country_id" data-validation="required">
+                                    <option label="Select Country Name"></option>
+                                    </select>
+                            </div>
+                            <div class="form-group col-md-12 col-sm-12">
+                        <label for="pwd">State Name:</label>
+                        <input type="text" class="form-control form-control-sm" id="s_state_name" placeholder="Enter state Name"
+                            name="s_state_name" data-validation="required">
+        
+                </div>
+    
+                <br>
+                <div class="form-group col-md-12 col-sm-12">
+                        <input type="hidden" class="form-control" id="n_state_id" 
+                        name="n_state_id" >
+                    <button type="submit" class="btn active btn-info btn-sm" id="savestate">Save</button>
+                    <button type="submit" class="btn active btn-info btn-sm" id="updatestate" style="display: none;">Update</button>
+                  
+                    <button type="reset"  id="reset" class="btn active btn-warning btn-sm">Reset</button>
+                </div>
+                </div>
+            </form>
+        </div>
+        </div>
+        </div>
+        <div class="col-md-8">
+            <div class="panel">
+            <div class="panel-heading">
+            <span class="panel-icon"></span>
+            <span class="panel-title">State List</span>
+             </div>
+            <div class="panel-body">
+                <table class="table table-stripped table-condensed table-sm" id="state_table" style="width:100%">
+                    <thead class="thead-light">
+                        <tr>
+                         
+                            <th>State Name</th>
+                            
+                           <th>Country Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            </div>
+            </div>
+            <script>
+                $.validate({
+                    modules: 'html5'
+                });
+            </script>
+            <script src="../../assets/javascript/state_master.js"></script>
+
+
+
+

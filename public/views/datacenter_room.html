@@ -1,0 +1,247 @@
+
+<center>
+  <h3>Datacenter Room Master
+  </center>
+  
+<div class="col-md-12" id="roomlist">
+  <!-- <div class="panel" id="panel">
+
+    <div class="panel-heading">
+      <span class="panel-icon"></span>
+      <span class="panel-title"> Datacenter Room List</span>
+
+
+        <button type="button" class="btn active btn-info btn-sm pull-right " onclick="divopennclose();"  style="margin-top: 5px;margin-left:8px" title=""><span class="glyphicon glyphicon-plus" data-toggle="tooltip1" title="Add New Record"> </span></button>
+   <button type="button" class="btn active btn-info btn-sm pull-right " id="deleterecord" onclick="deleteroomrecord();"
+      style="margin-top: 5px;margin-left:4px" title=""><span class="glyphicon glyphicon-trash" data-toggle="tooltip1" title="Show Deleted Data"> </span></button>
+   
+   
+    </div>
+    <div class="panel-body">
+
+      <table class="table table-striped table-bordered datatab" id="roommaster" >
+        <thead class="thead-light">
+          <tr>
+        
+
+           <th style="width:33%;">Action</th>
+              <th style="width:33%;">Room Number</th>
+              <th style="width:33%;">Floor Location</th>
+              <th style="width:33%;">Datacenter Name</th>
+
+              
+          
+          </tr>
+        </thead>
+      
+      </table>
+    </div>
+  </div>
+
+
+
+ <div class="panel" id="panel1">
+
+    <div class="panel-heading">
+      <span class="panel-icon"></span>
+      <span class="panel-title"> Datacenter Room List</span>
+
+
+        <button type="button" class="btn active btn-info btn-sm pull-right " onclick="divopennclose();"  style="margin-top: 5px;margin-left:8px" title=""><span class="glyphicon glyphicon-plus" data-toggle="tooltip1" title="Add New Record"> </span></button>
+    <button type="button" class="btn active btn-info btn-sm pull-right " id="refreshrecord" onclick="get_datacenter_room_Data();"
+      style="margin-top: 5px;margin-left:4px" title=""><span class="glyphicon glyphicon-refresh" data-toggle="tooltip1" title="Refresh Data"> </span></button>
+   
+    </div>
+    <div class="panel-body">
+
+      <table class="table table-striped table-bordered datatab" id="roommaster1" >
+        <thead class="thead-light">
+          <tr>
+        
+
+           
+              <th style="width:33%;">Room Number</th>
+              <th style="width:33%;">Floor Location</th>
+              <th style="width:33%;">Datacenter Name</th>
+
+              
+          
+          </tr>
+        </thead>
+      </table>
+      
+    </div>
+  </div> -->
+
+
+
+
+
+  <div class="panel" id="panel">
+
+   
+
+
+
+    <div class="panel-heading">
+      <span class="panel-icon"></span>
+      <span class="panel-title">Room List</span>
+    
+      <!-- <button data-toggle="modal" data-target="#user_model" type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#user_model"onclick="refresh();" style="margin-top: 5px;">ADD User DATA</button> -->
+      <button type="button" class="btn active btn-info btn-sm pull-right " onclick="divopennclose();"  style="margin-top: 5px;margin-left:8px" title=""><span class="glyphicon glyphicon-plus" data-toggle="tooltip1" title="Add New Record"> </span></button>
+      <!-- <button class="btn active btn-info btn-sm pull-right" style="margin-top: 5px;" onclick="deleteroomrecord('1');hideonecell();" title="Show Deleted Users"><i class="ps-icon fa fa-recycle"></i></button>
+      <button class="btn active btn-info btn-sm pull-right" style="margin-top: 5px;margin-right:6px" onclick="get_datacenter_room_Data();"><i class="ps-icon fa fa-refresh"></i></button> -->
+        
+    </div>
+    <div class="panel-body" id="alldataofroom">
+      <table class="table table-striped table-bordered datatab" id="roommaster" >
+        <thead class="thead-light">
+          <tr>
+        
+
+           <th style="width:33%;">Action</th>
+              <th style="width:33%;">Room Number</th>
+              <th style="width:33%;">Floor Location</th>
+              <th style="width:33%;">Datacenter Name</th>
+
+              
+          
+          </tr>
+        </thead>
+      
+      </table>
+      
+      
+    </div>
+    <div class="panel-body" id="deletedataofroom">
+      <table class="table table-striped table-bordered datatab" id="roommaster1" >
+        <thead class="thead-light">
+          <tr>
+        
+
+           
+              <th style="width:33%;">Room Number</th>
+              <th style="width:33%;">Floor Location</th>
+              <th style="width:33%;">Datacenter Name</th>
+
+              
+          
+          </tr>
+        </thead>
+      </table>
+    </div>
+    </div>
+    </div>
+    
+
+
+
+
+
+
+
+<section id="dcroom_form" class="table-layout">
+
+  <div class="tray tray-center" style="height: 610px;">
+  
+  
+  <div class="admin-form theme-primary mw1000 center-block" style="padding-bottom: 175px;">
+  <div class="panel heading-border panel-primary">
+  <form   id="form-room" method="post" onsubmit="return false;">
+  <div class="panel-body bg-light">
+  <div class="section-divider mt20 mb40">
+  <span>  </span>
+  </div>
+  <input type="hidden" class="form-control input-sm" id="n_room_id" placeholder="Enter Room Number"
+  name="n_room_no" data-validation="required">
+  <div class="section row" id="spy1">
+  <div class="col-md-6">
+    
+    <label>Datacenter Name:</label>
+
+    <select id="n_datacenter_id" class="form-control input-sm" name="n_datacenter_id" required
+        onchange="get_floor_loc();">
+
+    </select>
+  </div>
+  
+  <div class="col-md-6">
+  
+    <label for="floor_loc">Floor Location</label>
+
+                    <select id="n_door_id" class="form-control input-sm" name="n_door_id" required>
+                        <option label="select floor"></option>
+                    </select>
+
+  </div>
+  
+  </div>
+  <div class="section row" id="spy1">
+    <div class="col-md-6">
+      
+      <label for="pwd">Room Number:</label>
+                    <input type="text" class="form-control input-sm" id="n_room_no" placeholder="Enter Room Number"
+                        name="n_room_no" data-validation="required">
+      </div>
+  <div class="col-md-6">
+    <label for="max-length-element">Room Description:</label><span id="max-length-element"> 200</span> chars left <br>
+    <!-- <textarea type="text" class="gui-textarea" id="s_desc"
+        placeholder="Enter datacenter Room description" name="s_desc" maxlength="200"
+        data-validation="required"></textarea> -->
+        <textarea class="gui-textarea" id="s_desc" name="s_desc"
+										placeholder="Enter datacenter Room description" data-validation="required"></textarea>
+
+  </div>
+  </div>
+ 
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-6 col-sm-6 " >
+      <button type="button" class="btn active btn-info btn-sm" id="saveroom">Save</button>
+      <button type="button" class="btn active btn-info btn-sm" id="updateroom" 
+        style="display: none;">Update</button>
+      <button type="reset" id="reset" class="btn active btn-warning btn-sm" onclick="return_()">Back</button>
+    </div>
+  </div>
+
+
+  
+
+  
+  </div>
+  
+  
+  
+  </form>
+  </div>
+  </div>
+  
+  </div>
+  
+  
+  
+  
+  </section>
+ 
+
+
+
+
+<script>
+  $.validate({
+      modules: 'html5,file'
+  });
+  //$("#content_form_floor").hide();
+  $('#s_desc').restrictLength( $('#max-length-element') );
+
+  $("#deletedataofroom").hide();
+	function hideonecell(){
+		$("#alldataofroom").hide();
+		$("#deletedataofroom").show();
+	}
+
+
+</script>
+<script src="../../assets/javascript/datacenter_room.js"></script>
+

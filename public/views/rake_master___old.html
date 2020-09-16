@@ -1,0 +1,130 @@
+<center>
+  <h3>Rake Master
+</center>
+
+<div class="col-md-12" id="rakelisttbl">
+  <div class="panel">
+    <div class="panel-heading">
+      <span class="panel-icon"></span>
+      <span class="panel-title"> Rake List</span>
+      <button type="button" class="btn active btn-info btn-sm pull-right" onclick="rakeopenclose();"
+        style="margin-top: 5px;margin-left:8px" title="Add New Record"><span class="glyphicon glyphicon-plus"> </span></button>
+    </div>
+    <div class="panel-body">
+
+      <table class="table table-striped table-bordered datatab" id="rake_table">
+        <thead class="thead-light">
+          <tr>
+            <th> Data Center</th>
+            <th>Floor Location</th>
+            <th>Room No.</th>
+            <th> Rake Name</th>
+            <th>Racku ID</th>
+            <th>Asset Code</th>
+            <th>Status</th>
+            <th> Rake Model</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+      </table>
+
+    </div>
+  </div>
+</div>
+
+<section id="content_form" class="table-layout">
+
+  <div class="tray tray-center" style="height: 610px;">
+    <div class="admin-form theme-primary mw1000 center-block" style="padding-bottom: 175px;">
+      <div class="panel heading-border panel-primary">
+        <form id="form-rake" method="post" onsubmit="return false;">
+          <div class="panel-body bg-light">
+            <div class="section-divider mt20 mb40">
+              <span>Rake Master Form </span>
+            </div>
+            <div class="section row" id="spy1">
+              <div class="col-md-6">
+                <label for="DataCenter" class="field prepend-icon"><b>Data Center Name:</b></label>
+                <select id="n_datacenter_id"class="gui-input" name="n_datacenter_id" data-validation="required"
+                  onchange="get_floor_loc();">
+                  <option label="Select Datacenter Name"></option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label for="floor" class="field prepend-icon"><b>Floor Location :</b></label>
+                <select id="n_door_id" class="gui-input" name="n_door_id" data-validation="required"
+                  onchange=" get_data_center_room();">
+                  <option label="Select floor"></option>
+                </select>
+              </div>
+
+            </div>
+            <div class="section row" id="spy1">
+              <div class="col-md-6">
+                <label for="room" class="field prepend-icon"><b>Room No:</b></label>
+                <select id="n_room_id" class="gui-input" name="n_room_id" data-validation="required">
+                  <option label="Select Room Number"></option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="Rake Name" class="field prepend-icon"><b>Rake Name:</b></label>
+                <input type="text" class="gui-input" id="s_rake_name" placeholder=" Rake Name" name="s_rake_name"
+                  required>
+              </div>
+
+            </div>
+            <div class="section row" id="spy1">
+              <div class="col-md-6">
+                <label for="Rake Name" class="field prepend-icon"><b>Racku ID:</b></label>
+                <input type="number" class="gui-input" id="s_racku_no" placeholder="Enter Rake Name" name="s_racku_no"
+                  required>
+              </div>
+              <div class="col-md-6">
+                <label for="Rake Code" class="field prepend-icon"><b> Rake Code:</b></label>
+                <input type="text" class="gui-input" id="s_rake_code" placeholder=" Rake Code" name="s_rake_code"
+                  data-validation="required">
+              </div>
+            </div>
+
+            <div class="section row" id="spy1">
+              <div class="col-md-6">
+                <label for="status" class="field prepend-icon"><b>Status:</b></label>
+                <select id="n_status" class="gui-input" name="n_status" data-validation="required">
+                  <option label="Select rake Status"></option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="Rake Model" class="field prepend-icon"><b>Rake Model:</b></label>
+                <input type="text" id="s_rake_model" class="gui-input" placeholder="Enter Rake Model"
+                  name="s_rake_model" data-validation="required">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-sm-6">
+                <input type="hidden" id="n_rake_id" class="form-control" name="n_rake_id">
+                <button type="button" class="btn active btn-info btn-sm" id="saveRake">Save</button>
+                <button type="button" class="btn active btn-info btn-sm" id="updateRake"
+                  style="display: none;">Update</button>
+                <button type="reset" id="reset" class="btn active btn-warning btn-sm"
+                  onclick="rakeopenclose_()">Back</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<script>
+  $.validate({
+    modules: 'html5,file'
+  });
+  $("#content_form").hide();
+
+</script>
+<script src="../assets/javascript/rake.js"></script>

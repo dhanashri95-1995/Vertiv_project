@@ -1,0 +1,291 @@
+<center>
+  <h3>Alert Transaction Master
+</center>
+
+<div class="col-md-12" id="alert_transdata">
+  <div class="panel">
+
+    <div class="panel-heading">
+      <span class="panel-icon"></span>
+      <span class="panel-title"> Alert Transaction Master</span>
+
+
+      <button type="button" class="btn active btn-info btn-sm pull-right " onclick="divopennclose();"
+        style="margin-top: 5px;margin-left:8px" title="Add New Record"><span class="glyphicon glyphicon-plus"> </span></button>
+
+<!-- 
+        <button type="button" class="btn active btn-info btn-sm pull-right " onclick="view_deleted_rec();"
+        style="margin-top: 5px;margin-left:8px" title="View Deleted Record"><span>Deleted Rec</span></button> -->
+
+        <button class="btn active btn-info btn-sm pull-right"  style="margin-top: 5px;"
+			  onclick="view_deleted_rec();" title="Show Deleted Users"><i
+          class="ps-icon fa fa-recycle"></i></button>
+        
+          
+          <button class="btn active btn-info btn-sm pull-right" 
+			  style="margin-top: 5px;margin-right:6px" onclick="show_data()"><i class="ps-icon fa fa-refresh"></i></button>
+      <!-- <button type="button" class="btn active btn-info btn-sm pull-right " onclick="show_data();"
+      style="margin-top: 5px;margin-left:8px" title="Add New Record"><span>view all data</span></button> -->
+    </div>
+    <div class="panel-body" id="userlisttbl">
+
+      <table class="table table-striped table-bordered datatab" id="alerttransaction_data">
+        <thead class="thead-light">
+          <tr>
+
+            <th>Action</th>
+            <th>Alert Description</th>
+            <th> Asset Name</th>
+            <!-- <th>Rake </th> -->
+            <th>Alert name</th>
+            <th>Date</th>
+            <th> Email</th>
+            <th> Note user</th>
+          
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="panel-body" id="Deleted_data">
+
+      <table class="table table-striped table-bordered datatab" id="deleted_data">
+        <thead class="thead-light">
+          <tr>
+
+            <th>Alert Description</th>
+            <th> Asset Name</th>
+            <!-- <th>Rake </th> -->
+            <th>Alert name</th>
+            <th>Date</th>
+            <th> Email</th>
+            <th> Note user</th>
+         
+          </tr>
+        </thead>
+      </table>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- ************DELETED DATA ***************** -->
+
+<!-- <div class="col-md-12" id="Deleted_data">
+  <div class="panel">
+
+    <div class="panel-heading">
+      <span class="panel-icon"></span>
+      <span class="panel-title"> Alert Transaction Master</span>
+
+      <button type="button" class="btn active btn-info btn-sm pull-right " onclick="show_data();"
+      style="margin-top: 5px;margin-left:8px" title="Add New Record"><span>view all data</span></button>
+
+
+    </div>
+    <div class="panel-body">
+
+      <table class="table table-striped table-bordered datatab" id="deleted_data">
+        <thead class="thead-light">
+          <tr>
+
+            <th>Alert Description</th>
+            <th> Asset Name</th>
+            <th>Rake </th>
+            <th>Alert name</th>
+            <th>Date</th>
+            <th> Email</th>
+            <th> Note user</th>
+         
+          </tr>
+        </thead>
+      </table>
+      </table>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+<!-- ********************************* -->
+<section id="content_form" class="table-layout">
+
+  <div class="tray tray-center" style="height: 610px;">
+
+    <!-- <div class="content-header">
+  <h2> AdminForms makes <b class="text-primary">Validation</b> is easier than ever</h2>
+  <p class="lead">Use the Admin Forms you know and love to help build the perfect form.</p>
+  </div> -->
+
+    <div class="admin-form theme-primary mw1000 center-block" style="padding-bottom: 175px;">
+      <div class="panel heading-border panel-primary">
+        <form id="form-alert_transaction" method="post" onsubmit="return false;">
+          <div class="panel-body bg-light">
+            <div class="section-divider mt20 mb40">
+              <span> Alert Transaction Master</span>
+            </div>
+
+            <div class="section row" id="spy1">
+            
+
+              <div class="col-md-6">
+                <label for="asset"> Asset Name :</label>
+                <label for="asset" class="field prepend-icon">
+                  <!-- <input type="text" name="s_last_name" id="s_last_name" class="gui-input" placeholder="Last name"
+                    data-validation="required"> -->
+
+                  <select class="fstdropdown-select form-control form-control-sm input-sm " id="n_asset_id" name="n_asset_id"
+                    required>
+                    <option label="select Asset">text</option>
+                    <option value="1">text</option>
+
+                    <option value="1">Currency</option>
+                    <option value="4">Select</option>
+                    <option value="5">Date</option>
+                    <option value="6">Email</option>
+                    <option value="7">File</option>
+                  </select>
+                  <label for="asset">
+                  </label>
+                </label>
+              </div>
+              <div class="col-md-6">
+                <label for="asset"> Alert Name :</label>
+
+                <label for="alert" class="field prepend-icon">
+                  <select class="fstdropdown-select form-control form-control-sm  input-sm" id="n_alert_id" name="n_alert_id"
+                    required>
+                    <option label="select Alert"></option>
+                    <!-- <option value="1">text</option>
+
+                    <option value="1">Currency</option>
+                    <option value="4">Select</option>
+                    <option value="5">Date</option>
+                    <option value="6">Email</option>
+                    <option value="7">File</option> -->
+                  </select>
+                  <label for="alert">
+                  </label>
+                </label>
+              </div>
+              <!-- <div class="col-md-6">
+    <label for="lastname" class="field prepend-icon">
+    <input type="text" name="s_user_name" id="s_user_name" class="gui-input" placeholder="Last name"  data-validation="required">
+    <label for="lastname" class="field-icon">
+    <i class="fa fa-user"></i>
+    </label>
+    </label>
+    </div> -->
+            </div>
+            <div class="section row" id="spy1">
+              
+              <div class="col-md-6">
+                <label for="rake"> Rake Name :</label>
+
+                <label for="rake" class="field prepend-icon">
+               
+                  <select class="fstdropdown-select form-control form-control-sm  input-sm" id="n_u_id" name="n_u_id" required>
+                    <option label="select Rake"></option>
+                    <option value="1">text</option>
+                    <option value="1">Currency</option>
+                    <option value="4">Select</option>
+                    <option value="5">Date</option>
+                    <option value="6">Email</option>
+                    <option value="7">File</option>
+                  </select>
+                  <label for="rake">
+
+
+                  </label>
+                </label>
+              </div>
+              <div class="col-md-6">
+                <label for="alert_transaction">Alert Transaction Description :</label> <span id="max-length-element" style=" padding-left: 163px; ">200</span> chars left <br>
+                <label for="alert_transaction" class="field ">
+                 
+                  <input type="hidden" id="n_alert_trans_id" class="form-control input-sm" placeholder="Type Here...">
+                 
+                    
+                      <textarea class="gui-input textarea input-sm" id="s_alert_desc" rows="4" spellcheck="true" placeholder="Alert Description"></textarea>
+                  </label>
+                </label>
+              </div>
+
+
+
+            </div>
+            <div class="section row" id="spy1">
+              <div class="col-md-6">
+                <label for="email"> Email Id :</label>
+
+                <label for="email" class="field prepend-icon">
+                  <input type="text" class="form-control input-sm" id="n_email" name="n_email" placeholder="User Email ID"
+                    data-validation="required,email">
+                  <!--  onblur="getcheckemail();" -->
+                  <label for="email" class="field-icon">
+                    <i class="fa fa-envelope"></i>
+                  </label>
+                </label>
+              </div>
+              <div class="col-md-6">
+                <label for="asset"> Date :</label>
+
+                <input type="date" class="form-control input-sm" id="d_date" placeholder="Enter User Name" name="d_date"
+                  required>
+
+                </label>
+                </label>
+              </div>
+
+            </div>
+
+            <div class="section row" id="spy1">
+              <div class="col-md-6">
+                <label for="Notify">Notify User :</label>
+                <label for="Notify" class="field prepend-icon">
+                  <input type="text" class="form-control input-sm" id="s_notify_user" placeholder="Notify User"
+                    name="s_notify_user" data-validation="required">
+                  <!-- <input type="url" name="website" id="website" class="gui-input" placeholder="Current website url"> -->
+                  <label for="website" class="field-icon">
+                    <i class="fa fa-globe"></i>
+                  </label>
+                </label>
+              </div>
+              <!-- <div class="col-md-6">
+                <label for="rolename"> </label>
+                <label for="website" class="field prepend-icon">
+                  <input type="text" class="form-control" id="s_company_name" placeholder="Company Name"
+                    name="s_company_name" data-validation="required">
+
+                  <label for="website" class="field-icon">
+                    <i class="fa fa-globe"></i>
+                  </label>
+                </label>
+              </div> -->
+
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-sm-6 ">
+                <button type="button" class="btn active btn-info btn-sm" id="save_alert_transaction">Save</button>
+                <button type="button" class="btn active btn-info btn-sm" id="update_alert_transaction"
+                  style="display: none;">Update</button>
+                <button type="reset" id="resetuser" class="btn active btn-warning btn-sm"
+                  onclick="divopennclose_()">Back</button>
+              </div>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  $.validate({
+    modules: 'html5,file'
+  });
+  $('#s_alert_desc').restrictLength($('#max-length-element'));
+  $("#content_form").hide();
+</script>
+<script src="./assets/javascript/alert_transaction.js"></script>

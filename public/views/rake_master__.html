@@ -1,0 +1,153 @@
+<center>
+  <h3>Rake Master</h3>
+</center>
+
+<div class="col-md-12">
+  <div class="panel">
+
+    <div class="panel-heading">
+      <span class="panel-icon"></span>
+      <span class="panel-title"> Rake List</span>
+      <button type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#rake_model"
+        onclick="refresh();" style="margin-top: 5px;">ADD RAKE
+        DATA</button>
+    </div>
+    <br>
+    <div class="panel-body">
+
+      <table class="table table-stripped table-condensed table-sm" id="rake_table" style="width:100%">
+        <thead>
+          <tr role="row">
+            <th> Rake Name</th>
+
+            <th> Data Center Name</th>
+
+            <th>Asset Code</th>
+
+            <th>Status</th>
+            <th>Floor Location</th>
+
+            <th>Room No.</th>
+            <th> Rake Model</th>
+
+            <th>Action</th>
+
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal" id="rake_model">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <button type="button" class="close" id="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" style="text-align: center">Form</h4>
+
+      </div>
+
+      <br>
+      <div class="modal-body" style="margin-top: -30px;">
+
+        <form method="post" onsubmit="return false;" id="form-rake">
+
+
+          <div class="row">
+
+            <div class="form-group col-md-6 col-sm-12">
+
+              <label for="Rake Name">Rake Name:</label>
+              <input type="text" class="form-control form-control-sm" id="s_rake_name" placeholder="Enter Rake Name"
+                name="s_rake_name" required>
+            </div>
+
+
+
+            <div class="form-group col-md-6 col-sm-12">
+              <label for="DataCenter">Data Center Name:</label>
+              <select id="n_datacenter_id" class="form-control form-control-sm" name="n_datacenter_id"
+                data-validation="required" onchange="get_floor_loc();">
+                <option label="Select Datacenter Name"></option>
+
+              </select>
+            </div>
+         
+
+            <div class="form-group col-md-6 col-sm-12">
+
+              <label for="floor">Floor Location :</label>
+              <select id="n_door_id" class="form-control form-control-sm" name="n_door_id" data-validation="required"
+                onchange=" get_data_center_room();">
+                <option label="Select floor"></option>
+              </select>
+            </div>
+
+
+            <div class="form-group col-md-6 col-sm-12">
+              <label for="room">Room Number:</label>
+              <select id="n_room_id" class="form-control form-control-sm" name="n_room_id" data-validation="required">
+                <option label="Select Room Number"></option>
+
+              </select>
+
+            </div>
+          
+
+
+            <div class="form-group col-md-6 col-sm-12">
+
+              <label for="Asset Code">Asset Code:</label>
+              <input type="text" class="form-control form-control-sm" id="s_asset_code" placeholder="Enter Asset Code"
+                name="s_asset_code" data-validation="required">
+
+            </div>
+
+
+
+            <div class="form-group col-md-6 col-sm-12">
+              <label for="status">Status:</label>
+
+              <select id="n_status" class="form-control form-control-sm" name="n_status" data-validation="required">
+                <option label="Select rake Status"></option>
+              </select>
+            </div>
+         
+          <div class="form-group col-md-6 col-sm-12">
+
+              <label for="Rake Model">Rake Model:</label>
+              <input type="text" class="form-control form-control-sm" id="s_rake_model" placeholder="Enter Rake Model"
+                name="s_rake_model" data-validation="required">
+            </div>
+          
+
+         <div class="form-group col-md-12 col-sm-12">
+          <input type="hidden" id="n_rake_id" class="form-control" name="n_rake_id">
+
+
+
+          <button type="button" id="saveRake" class="btn active btn-info btn-sm">Save</button>
+          <button type="button" id="updateRake" class="btn active btn-info btn-sm">Update</button>
+          <button type="reset" id="reset" class="btn active btn-warning btn-sm">Reset</button>
+        </div>
+      </div>
+        </form>
+
+      </div>
+
+      <!-- Modal footer -->
+
+
+    </div>
+  </div>
+</div>
+<script>
+  $.validate({
+    modules: 'html5'
+  });
+</script>
+<script src="../assets/javascript/rake.js"></script>

@@ -1,0 +1,90 @@
+<center>
+    <h3>Datacenter Door Master</h3>
+</center>
+<div class="col-md-6">
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-icon"></span>
+            <span class="panel-title"> Form</span>
+
+
+
+        </div>
+
+
+        <div class="panel-body">
+
+            <form id="form-door" method="post" onsubmit="return false;">
+
+                <input type="hidden" class="form-control" id="n_door_id" placeholder="Enter email" name="n_door_id">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="DataCenter">Data Center Name:</label>
+                        <select id="n_datacenter_id" class="form-control form-control-sm" name="n_datacenter_id"
+                            data-validation="required" onblur=" get_data_center_room();">
+                            
+
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="s_door_sensor_id">Door Sensor Id:</label>
+                        <input type="text" class="form-control" id="s_door_sensor_id" placeholder="Enter Door Sensor Id"
+                            name="s_door_sensor_id" data-validation="required">
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="s_floor_loc">Floor Location:</label>
+                        <input type="text" class="form-control" id="s_floor_loc" placeholder="Enter Floor Location"
+                            name="s_floor_loc" data-validation="required">
+
+
+                    </div>
+
+
+
+                </div>
+
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn active btn-info btn-sm" id="savedoor">Save</button>
+                        <button type="submit" class="btn active btn-info btn-sm" id="updatedoor"
+                            style="display: none;">Update</button>
+                        <button type="reset" id="reset" class="btn active btn-warning btn-sm">Reset</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-icon"></span>
+            <!-- <span class="panel-title">datacenter location Master Form</span> -->
+        </div>
+        <div class="panel-body">
+            <table class="table table-stripped table-condensed table-sm" id="doormaster" style="width:100%">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Datacenter Name</th>
+                        <th>Door Sensor Id</th>
+                        <th>Floor Location</th>
+
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+$.validate({
+    modules: 'html5'
+});
+</script>
+<script src="../../assets/javascript/datacenter_door.js"></script>

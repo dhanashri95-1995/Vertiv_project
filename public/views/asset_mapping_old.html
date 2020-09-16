@@ -1,0 +1,135 @@
+<center>
+  <h3>Asset Mapping
+</center>
+
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-visible" id="spy2">
+      <div class="panel-heading">
+        <div class="panel-title hidden-xs">
+          Asset Mapping List
+
+          <button type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal"
+            data-target="#asset_map_model" onclick="refresh();" style="margin-top: 5px;">ASSET MAPPING
+          </button>
+        </div>
+      </div>
+
+
+
+      <div class="panel-body pn">
+
+        <table class="table table-stripped table-condensed table-sm" id="asset_map_table" cellspacing="0" width="100%"
+          role="grid" aria-describedby="datatable2_info" style="width: 100%;">
+          <thead>
+            <tr role="row">
+
+              <th> Rack Name</th>
+
+              <th> Tag Name</th>
+
+              <th>Asset Description </th>
+
+              <th>Status</th>
+
+              <th>Assign Date</th>
+
+              <th>Action</th>
+
+            </tr>
+          </thead>
+
+        </table>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="asset_map_model">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <button type="button" class="close" id="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" style="text-align: center">Asset Mapping Form</h4>
+
+      </div>
+
+      <br>
+      <div class="modal-body" style="margin-top: -30px;">
+
+
+        <form method="post" onsubmit="return false;" id="asset_map_form">
+
+
+
+          <input type="hidden" id="n_asset_mapping_id" class="form-control" name="n_asset_mapping_id">
+
+
+          <div class="row">
+
+            <div class="form-group col-md-6 col-sm-12">
+              <label for="RackName">Rack Name:</label>
+              <select id="n_rake_id" class="form-control form-control-sm" name="n_rake_id" data-validation="required" onchange="get_n_u_id();">
+                <option label="select rake" disabled></option>
+
+              </select>
+
+            </div>
+            <div class="form-group col-md-6 col-sm-12">
+              <label for="RackUTag">Tag ID:</label>
+              <select id="n_u_id" class="form-control form-control-sm" name="n_u_id" data-validation="required">
+                <option label="select tagID" disabled></option>
+              </select>
+              
+            </div>
+            <div class="form-group col-md-6 col-sm-12">
+              <label for="Asset Description">Asset Description:</label>
+              <select id="n_asset_id" class="form-control form-control-sm" name="n_asset_id" data-validation="required">
+                <option label="select Asset" disabled></option>
+              </select>
+            </div>
+            <div class="form-group col-md-6 col-sm-12">
+              <label for="Status">Status:</label>
+              <select id="n_status_no" class="form-control form-control-sm" name="n_status_no" data-validation="required">
+                <option label="select Status" disabled></option>
+              </select>
+            </div>
+
+         
+          <div class="form-group col-md-6 col-sm-12">
+
+              <label for="Date">Date:</label>
+              <input type="date" class="form-control form-control-sm" id="d_assign_date" placeholder="Enter Warranty Expiry Date"
+                name="n_status" required>
+            </div>
+
+
+
+
+            <div class="form-group col-md-12 col-sm-12">
+
+          <button type="button" id="save_asset_map" class="btn active btn-info btn-sm">Save</button>
+          <button type="button" id="update_asset_map" class="btn active btn-info btn-sm">Update</button>
+          <button type="reset" id="reset" class="btn active btn-warning btn-sm">Reset</button>
+        </div>
+      </div>
+        </form>
+      
+      </div>
+
+      <!-- Modal footer -->
+
+
+    </div>
+  </div>
+</div>
+<script>
+  $.validate({
+    modules: 'html5'
+  });
+</script>
+<script src="../assets/javascript/asset_map.js"></script>

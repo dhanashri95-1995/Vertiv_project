@@ -1,0 +1,238 @@
+[2020-09-13T12:15:08.384] [ERROR] app - {
+  status: 500,
+  mess: 'Record not Found !',
+  mess_body: 'Somthing went Wrong.',
+  data: error: syntax error at end of input
+      at Parser.parseErrorMessage (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:241:15)
+      at Parser.handlePacket (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:89:29)
+      at Parser.parse (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:41:38)
+      at Socket.<anonymous> (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\index.js:8:42)
+      at Socket.emit (events.js:223:5)
+      at addChunk (_stream_readable.js:309:12)
+      at readableAddChunk (_stream_readable.js:290:11)
+      at Socket.Readable.push (_stream_readable.js:224:10)
+      at TCP.onStreamRead (internal/stream_base_commons.js:181:23) {
+    length: 92,
+    name: 'error',
+    severity: 'ERROR',
+    code: '42601',
+    detail: undefined,
+    hint: undefined,
+    position: '141',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'scan.l',
+    line: '1120',
+    routine: 'scanner_yyerror'
+  }
+}
+[2020-09-13T12:28:16.893] [ERROR] app - {
+  status: 500,
+  mess: 'Record not Found !',
+  mess_body: 'Somthing went Wrong.',
+  data: error: function getracku(integer) does not exist
+      at Parser.parseErrorMessage (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:241:15)
+      at Parser.handlePacket (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:89:29)
+      at Parser.parse (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:41:38)
+      at Socket.<anonymous> (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\index.js:8:42)
+      at Socket.emit (events.js:223:5)
+      at addChunk (_stream_readable.js:309:12)
+      at readableAddChunk (_stream_readable.js:290:11)
+      at Socket.Readable.push (_stream_readable.js:224:10)
+      at TCP.onStreamRead (internal/stream_base_commons.js:181:23) {
+    length: 210,
+    name: 'error',
+    severity: 'ERROR',
+    code: '42883',
+    detail: undefined,
+    hint: 'No function matches the given name and argument types. You might need to add explicit type casts.',
+    position: '73',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_func.c',
+    line: '523',
+    routine: 'ParseFuncOrColumn'
+  }
+}
+[2020-09-13T12:29:08.441] [ERROR] app - {
+  status: 500,
+  mess: 'Record not Found !',
+  mess_body: 'Somthing went Wrong.',
+  data: error: function getracku(integer) does not exist
+      at Parser.parseErrorMessage (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:241:15)
+      at Parser.handlePacket (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:89:29)
+      at Parser.parse (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:41:38)
+      at Socket.<anonymous> (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\index.js:8:42)
+      at Socket.emit (events.js:223:5)
+      at addChunk (_stream_readable.js:309:12)
+      at readableAddChunk (_stream_readable.js:290:11)
+      at Socket.Readable.push (_stream_readable.js:224:10)
+      at TCP.onStreamRead (internal/stream_base_commons.js:181:23) {
+    length: 210,
+    name: 'error',
+    severity: 'ERROR',
+    code: '42883',
+    detail: undefined,
+    hint: 'No function matches the given name and argument types. You might need to add explicit type casts.',
+    position: '73',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_func.c',
+    line: '523',
+    routine: 'ParseFuncOrColumn'
+  }
+}
+[2020-09-13T12:29:38.324] [ERROR] app - {
+  status: 500,
+  mess: 'Record not Found !',
+  mess_body: 'Somthing went Wrong.',
+  data: error: function getracku(integer) does not exist
+      at Parser.parseErrorMessage (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:241:15)
+      at Parser.handlePacket (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:89:29)
+      at Parser.parse (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:41:38)
+      at Socket.<anonymous> (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\index.js:8:42)
+      at Socket.emit (events.js:223:5)
+      at addChunk (_stream_readable.js:309:12)
+      at readableAddChunk (_stream_readable.js:290:11)
+      at Socket.Readable.push (_stream_readable.js:224:10)
+      at TCP.onStreamRead (internal/stream_base_commons.js:181:23) {
+    length: 210,
+    name: 'error',
+    severity: 'ERROR',
+    code: '42883',
+    detail: undefined,
+    hint: 'No function matches the given name and argument types. You might need to add explicit type casts.',
+    position: '73',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_func.c',
+    line: '523',
+    routine: 'ParseFuncOrColumn'
+  }
+}
+[2020-09-13T12:33:38.382] [ERROR] app - {
+  status: 500,
+  mess: 'Record not Found !',
+  mess_body: 'Somthing went Wrong.',
+  data: error: function getracku(integer) does not exist
+      at Parser.parseErrorMessage (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:241:15)
+      at Parser.handlePacket (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:89:29)
+      at Parser.parse (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:41:38)
+      at Socket.<anonymous> (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\index.js:8:42)
+      at Socket.emit (events.js:223:5)
+      at addChunk (_stream_readable.js:309:12)
+      at readableAddChunk (_stream_readable.js:290:11)
+      at Socket.Readable.push (_stream_readable.js:224:10)
+      at TCP.onStreamRead (internal/stream_base_commons.js:181:23) {
+    length: 210,
+    name: 'error',
+    severity: 'ERROR',
+    code: '42883',
+    detail: undefined,
+    hint: 'No function matches the given name and argument types. You might need to add explicit type casts.',
+    position: '73',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_func.c',
+    line: '523',
+    routine: 'ParseFuncOrColumn'
+  }
+}
+[2020-09-13T12:45:30.485] [ERROR] app - {
+  status: 500,
+  mess: 'Record not Found !',
+  mess_body: 'Somthing went Wrong.',
+  data: error: function getracku(integer) does not exist
+      at Parser.parseErrorMessage (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:241:15)
+      at Parser.handlePacket (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:89:29)
+      at Parser.parse (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:41:38)
+      at Socket.<anonymous> (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\index.js:8:42)
+      at Socket.emit (events.js:223:5)
+      at addChunk (_stream_readable.js:309:12)
+      at readableAddChunk (_stream_readable.js:290:11)
+      at Socket.Readable.push (_stream_readable.js:224:10)
+      at TCP.onStreamRead (internal/stream_base_commons.js:181:23) {
+    length: 210,
+    name: 'error',
+    severity: 'ERROR',
+    code: '42883',
+    detail: undefined,
+    hint: 'No function matches the given name and argument types. You might need to add explicit type casts.',
+    position: '73',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_func.c',
+    line: '523',
+    routine: 'ParseFuncOrColumn'
+  }
+}
+[2020-09-13T12:54:30.449] [ERROR] app - {
+  status: 500,
+  mess: 'Record not Found !',
+  mess_body: 'Server Side Error.',
+  data: error: syntax error at or near "and"
+      at Parser.parseErrorMessage (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:241:15)
+      at Parser.handlePacket (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:89:29)
+      at Parser.parse (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\parser.js:41:38)
+      at Socket.<anonymous> (d:\Project\vertiv\09-09-2020\node_modules\pg-protocol\dist\index.js:8:42)
+      at Socket.emit (events.js:223:5)
+      at addChunk (_stream_readable.js:309:12)
+      at readableAddChunk (_stream_readable.js:290:11)
+      at Socket.Readable.push (_stream_readable.js:224:10)
+      at TCP.onStreamRead (internal/stream_base_commons.js:181:23) {
+    length: 92,
+    name: 'error',
+    severity: 'ERROR',
+    code: '42601',
+    detail: undefined,
+    hint: undefined,
+    position: '52',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'scan.l',
+    line: '1128',
+    routine: 'scanner_yyerror'
+  }
+}

@@ -1,0 +1,100 @@
+<center>
+  <h3>RackU Master
+</center>
+
+<div class="col-md-12">
+  <div class="panel">
+
+    <div class="panel-heading">
+      <span class="panel-icon"></span>
+      <span class="panel-title"> RackU List</span>
+
+
+      <button type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#rackU_model"
+        onclick="refresh();" style="margin-top: 5px;">ADD RACKU
+        DATA</button>
+    </div>
+    <div class="panel-body">
+
+      <table class="table table-stripped table-condensed table-sm" id="rackU_table" style="width:100%">
+        <thead>
+          <tr role="row">
+            <th> Tag ID</th>
+
+
+            <th>Status</th>
+            <th> Rake Name</th>
+
+            <th>Action</th>
+
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal" id="rackU_model">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <button type="button" class="close" id="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" style="text-align: center">Form</h4>
+
+      </div>
+
+      <br>
+      <div class="modal-body" style="margin-top: -30px;">
+
+        <form method="post" onsubmit="return false;" id="rackU_form">
+
+<div class="row">
+         <div class="form-group col-md-6 col-sm-12">
+
+              <label for="Tag Name">Tag ID:</label>
+              <input type="text" class="form-control form-control-sm" id="s_tag_id" placeholder="Enter Tag Name:"
+                name="s_tag_id" required>
+            </div>
+
+
+
+            <div class="form-group col-md-6 col-sm-12">
+              <label for="RackName">Rack Name :</label>
+              <select id="n_rake_id" class="form-control" name="n_rake_id" data-validation="required">
+              </select>
+            </div>
+          
+
+            <div class="form-group col-md-6 col-sm-12">
+           
+              <label for="Status">Status:</label>
+              <select  class="form-control form-control-sm" id="n_status" placeholder="Enter Tag Name:"
+                 name="n_status" required>
+               </select>
+             
+            </div>
+          
+
+          <input type="hidden" id="n_u_id" class="form-control" name="n_u_id">
+
+
+          <div class="form-group col-md-12 col-sm-12">
+          <button type="button" id="saveRackU" class="btn active btn-info btn-sm">Save</button>
+          <button type="button" id="updateRackU" class="btn active btn-info btn-sm">Update</button>
+          <button type="reset" id="reset" class="btn active btn-warning btn-sm">Reset</button>
+          </div>
+        </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  <script>
+    $.validate({
+      modules: 'html5'
+    });
+  </script>
+  <script src="../assets/javascript/rackU.js"></script>

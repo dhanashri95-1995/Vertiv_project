@@ -1,0 +1,98 @@
+<center><h3>Alert Master</h3></center>
+<div class="col-md-4">
+  <div class="panel">
+  <div class="panel-heading">
+  <span class="panel-title"> Alert Master</span>
+   </div>
+  <div class="panel-body">
+      <form id="form-alert"  method="post"  onsubmit="return false;">
+          <div class="row">
+              <div class="form-group col-md-12 col-sm-12">
+
+                <input type="hidden" class="form-control" id="n_alert_id" name="n_alert_id" placeholder="Enter User Name"
+                name="alert_id">
+              </div>
+              <div class="form-group col-md-12 col-sm-12">
+
+                  <input type="hidden" class="form-control" id="s_user_id" placeholder="Enter email"
+                      name="s_user_id" >
+
+              </div>
+
+
+              <div class="form-group col-md-12 col-sm-12">
+                <label for="pwd">Alert Name:</label>
+
+                <input type="text" class="form-control input-sm " id="s_alert_name" placeholder="Enter Alert Name"
+                    name="s_alert_name" >
+
+            </div>
+            <div class="form-group col-md-12 col-sm-12">
+              <label for="pwd">Alert Code:</label>
+
+              <input type="number" class="form-control input-sm " id="n_alert_code" placeholder="Enter Alert Code"
+                  name="n_alert_code" >
+
+          </div>
+
+            <!-- <div class="form-group col-md-12 col-sm-12">
+              <label for="pwd">Select Type:</label>
+           
+                  <select class="form-control input-sm" id="s_type" name="s_type" data-validation="required" required>
+
+                    <option label="SELECT"></option>
+                    <option value="A">Option 1</option>
+                    <option value="B">Option 2</option>
+                    <option value="C">Option 3</option>
+                    </select>
+            </div> -->
+
+              <div class="form-group col-md-12 col-sm-12">
+                  <label for="pwd">Alert Message Description:</label>
+                <textarea class="form-control textarea-grow" id="s_alert_msg_desc" name="s_alert_msg_desc" rows="4" placeholder="Enter alert description" data-validation="required" required></textarea>
+
+                
+
+              </div>
+
+          <br>
+              <div class="form-group col-md-12 col-sm-12">
+              <!-- <button type="button" class="btn btn-primary">Submit</button> -->
+              <button type="submit" class="btn active btn-info btn-sm" id="save_alert">Save</button>
+              <button type="submit" class="btn active btn-info btn-sm" id="btnupdate_alert">Update</button>
+              <button type="reset"  id="resetuser" class="btn active btn-warning btn-sm">Reset</button>
+              <!-- <button type="button" class="btn active btn-info btn-sm">Back</button> -->
+          </div>
+          </div>
+      </form>
+  </div>
+  </div>
+  </div>
+  <div class="col-md-8">
+      <div class="panel">
+      <div class="panel-heading">
+      <span class="panel-icon"></span>
+      <!-- <span class="panel-title"> Form</span> -->
+       </div>
+      <div class="panel-body">
+          <table class="table table-striped table-bordered datatabs" id="alert_data" style="width:100%">
+              <thead class="thead-light">
+                  <tr>
+                      <!-- <th>Sr No</th> -->
+                      <th>Name</th>
+                      <th>Alert Code</th>
+          <th>Alert Description</th>
+                      <th>Action</th>
+                  </tr>
+              </thead>
+          </table>
+      </div>
+      </div>
+      </div>
+      <script>
+        $.validate({
+            modules: 'html5,file'
+        });
+        // $('#s_about_me').restrictLength( $('#max-length-element') );
+      </script>
+      <script src="./assets/javascript/alert.js"></script>

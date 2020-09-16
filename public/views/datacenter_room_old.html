@@ -1,0 +1,96 @@
+<center>
+    <h3>Data Center Room</h3>
+</center>
+<div class="col-md-6">
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-icon"></span>
+            <span class="panel-title"> Form</span>
+        </div>
+
+        <div class="panel-body">
+
+            <form id="form-room" method="post" onsubmit="return false;">
+
+                <input type="hidden" class="form-control" id="n_room_id"  name="n_room_id">
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <label for="pwd">Room Number:</label>
+                        <input type="text" class="form-control" id="n_room_no" placeholder="Enter Room Number"
+                            name="n_room_no" data-validation="required">
+                    </div>
+                    
+                       
+                    <div class="col-md-6">
+                        <label for="pwd">Room Description:</label>
+                        <textarea type="text" class="form-control" id="s_desc" placeholder="Enter datacenter Room description"
+                            name="s_desc" data-validation="required"></textarea>
+                    </div>
+                    
+
+                    </div>
+
+                
+                <div class="row">
+                    <div class="col-md-6">
+                    <label for="n_datacenter_id">Datacenter Name:</label>
+
+                    <select id="n_datacenter_id" class="form-control" name="n_datacenter_id" required onchange="get_floor_loc();">
+                       
+                    </select>
+                </div>
+                    <div class="col-md-6">
+                        <label for="floor_loc">Floor Location</label>
+                        
+                            <select id="n_door_id" class="form-control" name="n_door_id" required>
+                                <option label="select floor"></option>
+                            </select>
+                    </div>
+
+
+
+                </div>
+
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn active btn-info btn-sm" id="saveroom">Save</button>
+                        <button type="submit" class="btn active btn-info btn-sm" id="updateroom"
+                            style="display: none;">Update</button>
+                        <button type="reset" id="reset" class="btn active btn-warning btn-sm">Reset</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-icon"></span>
+            <span class="panel-title">Datacenter Room</span>
+        </div>
+        <div class="panel-body">
+            <table class="table table-stripped table-condensed table-sm" id="roommaster" style="width:100%">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Room Number</th>
+                        <th> Room Description</th>
+                        <th>Floor Location</th>
+                        <th>Datacenter Name</th>
+
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    $.validate({
+      modules: 'html5'
+    });
+  </script>
+<script src="../../assets/javascript/datacenter_room.js"></script>

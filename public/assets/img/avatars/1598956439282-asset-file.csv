@@ -1,0 +1,2 @@
+DataCenter,Floor,Room,Column,RakeName,RackU,AssetName,AssetNo,Manufacrturer,Maker,ModelNo,DeviceCategory,SerialNo,BarcodeNo,OwnerName,OwnerEmail,Usize,Uposition,InstallDate,UHeight,Supplier,RatedPower,RatedCurrent,RatedVoltage,Maintenancecycle,ContactPerson,ContactNumber,NextMaintenance,CustomizedNote
+Dc1,Floor-4,room_1,c1,rake_1,RU-1,asset_1,ass_1,abc,anjana,888,hdius,saha,ahsy,o_1,hadga@gmail.com,hsduse,jsdshd,02/02/2008,adsa,haud,11,33,55,hdwiud,uuwqe,18723832,03/03/2003,shdisd

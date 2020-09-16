@@ -1,0 +1,64 @@
+[2020-09-16T15:01:05.568] [ERROR] app - { status: 500,
+  mess: 'Record not Found !',
+  mess_body: 'Somthing went Wrong.',
+  data:
+   { error: cannot insert multiple commands into a prepared statement
+       at Parser.parseErrorMessage (d:\vertiv2sept\13sept\09-09-2020 - Copy\node_modules\pg-protocol\dist\parser.js:241:15)
+       at Parser.handlePacket (d:\vertiv2sept\13sept\09-09-2020 - Copy\node_modules\pg-protocol\dist\parser.js:89:29)
+       at Parser.parse (d:\vertiv2sept\13sept\09-09-2020 - Copy\node_modules\pg-protocol\dist\parser.js:41:38)
+       at Socket.stream.on (d:\vertiv2sept\13sept\09-09-2020 - Copy\node_modules\pg-protocol\dist\index.js:8:42)
+       at Socket.emit (events.js:189:13)
+       at addChunk (_stream_readable.js:284:12)
+       at readableAddChunk (_stream_readable.js:265:11)
+       at Socket.Readable.push (_stream_readable.js:220:10)
+       at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+     length: 123,
+     name: 'error',
+     severity: 'ERROR',
+     code: '42601',
+     detail: undefined,
+     hint: undefined,
+     position: undefined,
+     internalPosition: undefined,
+     internalQuery: undefined,
+     where: undefined,
+     schema: undefined,
+     table: undefined,
+     column: undefined,
+     dataType: undefined,
+     constraint: undefined,
+     file: 'postgres.c',
+     line: '1289',
+     routine: 'exec_parse_message' } }
+[2020-09-16T15:03:29.688] [ERROR] app - { status: 500,
+  mess: 'Record not Found !',
+  mess_body: 'Somthing went Wrong.',
+  data:
+   { error: cannot insert multiple commands into a prepared statement
+       at Parser.parseErrorMessage (d:\vertiv2sept\13sept\09-09-2020 - Copy\node_modules\pg-protocol\dist\parser.js:241:15)
+       at Parser.handlePacket (d:\vertiv2sept\13sept\09-09-2020 - Copy\node_modules\pg-protocol\dist\parser.js:89:29)
+       at Parser.parse (d:\vertiv2sept\13sept\09-09-2020 - Copy\node_modules\pg-protocol\dist\parser.js:41:38)
+       at Socket.stream.on (d:\vertiv2sept\13sept\09-09-2020 - Copy\node_modules\pg-protocol\dist\index.js:8:42)
+       at Socket.emit (events.js:189:13)
+       at addChunk (_stream_readable.js:284:12)
+       at readableAddChunk (_stream_readable.js:265:11)
+       at Socket.Readable.push (_stream_readable.js:220:10)
+       at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+     length: 123,
+     name: 'error',
+     severity: 'ERROR',
+     code: '42601',
+     detail: undefined,
+     hint: undefined,
+     position: undefined,
+     internalPosition: undefined,
+     internalQuery: undefined,
+     where: undefined,
+     schema: undefined,
+     table: undefined,
+     column: undefined,
+     dataType: undefined,
+     constraint: undefined,
+     file: 'postgres.c',
+     line: '1289',
+     routine: 'exec_parse_message' } }
